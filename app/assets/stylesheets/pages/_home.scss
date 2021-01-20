@@ -2,6 +2,29 @@
 .homepage-banner {
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
   height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heading {
+  font-family: $arkham-font;
+  font-size: 68px;
+  color: $white;
+
+  margin-top: 70px;
+}
+
+.homepage-banner ul {
+  list-style: none;
+
+  margin-top: 100px;
+}
+
+.arkham-bullet {
+  font-family: $arkham-font;
+  font-size: 42px;
+  color: $white;
 }

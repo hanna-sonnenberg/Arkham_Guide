@@ -1,10 +1,9 @@
 // Specific CSS for your home-page
 .homepage-banner {
   background-size: cover;
-  background-repeat: no-repeat;
   background-position: center;
   // https://www.artstation.com/artwork/KvoKW
-  height: 100vh;
+  height: calc(100vh - $navbar-height);
 
   display: flex;
   flex-direction: column;
@@ -36,9 +35,11 @@
 @media (min-width: 320px) and (max-width: 480px) {
   .heading {
     font-size: 22px;
+
+    margin-top: 90px;
   }
   .homepage-banner ul {
-    margin-top: 50px;
+    margin-top: 70px;
   }
   .arkham-bullet {
     font-family: $arkham-font;
@@ -49,14 +50,16 @@
 //Device = Low Resolution Tablets, Mobiles (Landscape)
 @media (min-width: 481px) and (max-width: 767px) {
   .heading {
-    font-size: 28px;
+    font-size: 36px;
+
+    margin-top: 100px;
   }
   .homepage-banner ul {
     margin-top: 50px;
   }
   .arkham-bullet {
     font-family: $arkham-font;
-    font-size: 18px;
+    font-size: 28px;
   }
 }
 

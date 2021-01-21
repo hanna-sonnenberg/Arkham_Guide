@@ -1,7 +1,9 @@
 // Specific CSS for your home-page
 .homepage-banner {
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
+  // https://www.artstation.com/artwork/KvoKW
   height: 100vh;
 
   display: flex;
@@ -11,7 +13,7 @@
 
 .heading {
   font-family: $arkham-font;
-  font-size: 68px;
+  font-size: 62px;
   color: $white;
 
   margin-top: 70px;
@@ -21,6 +23,7 @@
   list-style: none;
 
   margin-top: 100px;
+  padding-left: 0;
 }
 
 .arkham-bullet {
@@ -28,3 +31,49 @@
   font-size: 42px;
   color: $white;
 }
+
+//Device = Most of the Smartphones Mobiles (Portrait)
+@media (min-width: 320px) and (max-width: 480px) {
+  .heading {
+    font-size: 22px;
+  }
+  .homepage-banner ul {
+    margin-top: 50px;
+  }
+  .arkham-bullet {
+    font-family: $arkham-font;
+    font-size: 18px;
+  }
+}
+
+//Device = Low Resolution Tablets, Mobiles (Landscape)
+@media (min-width: 481px) and (max-width: 767px) {
+  .heading {
+    font-size: 28px;
+  }
+  .homepage-banner ul {
+    margin-top: 50px;
+  }
+  .arkham-bullet {
+    font-family: $arkham-font;
+    font-size: 18px;
+  }
+}
+
+//Device = Tablets, Ipads (landscape)
+@media (min-width: 768px) and (max-width: 1024px) {
+  .heading {
+    font-size: 52px;
+  }
+  .homepage-banner ul {
+    margin-top: 50px;
+  }
+  .arkham-bullet {
+    font-family: $arkham-font;
+    font-size: 36px;
+  }
+}
+
+
+
+

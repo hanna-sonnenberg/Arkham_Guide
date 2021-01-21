@@ -1,6 +1,10 @@
 <div class="homepage-banner" style="background-image: url(<%= image_path "background.png"%>);">
     <h1 class="heading">ARKHAM HORROR GUIDE</h1>
     <ul>
+      <% if user_signed_in? %>
       <li><%= link_to "View your campaigns", campaigns_path, class: "arkham-bullet" %></li>
+      <% else %>
+      <li><%= link_to "Sign Up", new_user_registration_path, class: "arkham-bullet" %></li>
+      <% end %>
     </ul>
 </div>

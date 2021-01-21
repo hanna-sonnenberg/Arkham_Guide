@@ -13,6 +13,17 @@
   width: 200px;
 }
 
-.navbar-light .navbar-nav .nav-link {
-    color: $light-gray;
+.navbar-dark .navbar-nav .nav-link {
+    color: $white;
+}
+
+.font-size-logo {
+  font-size: 10px;
+}
+
+//Device = Most of the Smartphones Mobiles (Portrait)
+@media (min-width: 320px) and (max-width: 480px) {
+    .navbar-lewagon .navbar-brand img {
+    width: 100px;
+  }
 }

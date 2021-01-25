@@ -3,10 +3,13 @@
 }
 
 .navbar-lewagon {
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   background: $dark-tale;
   font-family: $arkham-font;
-  padding: 3px 10px;
+  padding: 5px 25px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -21,13 +24,28 @@
     color: $white;
 }
 
-.font-size-logo {
-  font-size: 10px;
+.dropdown-item {
+  font-size: 18px;
 }
 
-//Device = Most of the Smartphones Mobiles (Portrait)
-@media (min-width: 320px) and (max-width: 480px) {
-    .navbar-lewagon .navbar-brand img {
-    width: 100px;
+//Device = Most of the Smartphones Mobiles (Portrait) and Tablets
+@media (min-width: 320px) and (max-width: 767px) {
+  .navbar-lewagon .navbar-brand img {
+    width: 120px;
+  }
+  .avatar {
+    display: none;
+  }
+  .navbar-toggler {
+    padding: 2px 6px;
+  }
+  .navbar-nav {
+    background-color: $white;
+    padding: 5px 0 5px 10px;
+    margin-top: 3px;
+  }
+  .navbar-dark .navbar-nav .nav-link {
+    color: $black;
   }
 }
+

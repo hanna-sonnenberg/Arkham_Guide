@@ -28,8 +28,12 @@
   font-size: 18px;
 }
 
-//Device = Most of the Smartphones Mobiles (Portrait) and Tablets
-@media (min-width: 320px) and (max-width: 767px) {
+.responsive {
+  display: none;
+}
+
+//Device = Most of the Smartphones Mobiles (Portrait)
+@media (min-width: 320px) and (max-width: 480px) {
   .navbar-lewagon .navbar-brand img {
     width: 120px;
   }
@@ -47,5 +51,33 @@
   .navbar-dark .navbar-nav .nav-link {
     color: $black;
   }
+  .responsive {
+    display: inline;
+  }
 }
+
+@media (min-width: 481px) and (max-width: 574px) {
+  .navbar-lewagon .navbar-brand img {
+    width: 120px;
+  }
+  .avatar {
+    display: none;
+  }
+  .navbar-toggler {
+    padding: 2px 6px;
+  }
+  .navbar-nav {
+    background-color: $white;
+    padding: 5px 0 5px 10px;
+    margin-top: 3px;
+  }
+  .navbar-dark .navbar-nav .nav-link {
+    color: $black;
+  }
+  .responsive {
+    display: inline;
+  }
+}
+
+
 

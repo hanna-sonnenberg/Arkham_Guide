@@ -1,0 +1,16 @@
+.button-tale {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: $dark-tale;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: $darker-tale;
+    color: white;
+  }
+}
+
+a:hover {
+  text-decoration: none;
+}

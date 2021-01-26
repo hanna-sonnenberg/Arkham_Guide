@@ -12,7 +12,7 @@
 
 .heading {
   font-family: $arkham-font;
-  font-size: 62px;
+  font-size: $heading-size-home;
   color: $white;
 
   margin-top: 70px;
@@ -34,7 +34,7 @@
 //Device = Most of the Smartphones Mobiles (Portrait)
 @media (min-width: 320px) and (max-width: 480px) {
   .heading {
-    font-size: 22px;
+    font-size: calc(#{$heading-size-home} - 40px);
 
     margin-top: 90px;
   }
@@ -43,14 +43,14 @@
   }
   .arkham-bullet {
     font-family: $arkham-font;
-    font-size: 18px;
+    font-size: $standard-size-font;
   }
 }
 
 //Device = Low Resolution Tablets, Mobiles (Landscape)
 @media (min-width: 481px) and (max-width: 767px) {
   .heading {
-    font-size: 36px;
+    font-size: calc(#{$heading-size-home} - 30px);
 
     margin-top: 100px;
   }
@@ -59,21 +59,21 @@
   }
   .arkham-bullet {
     font-family: $arkham-font;
-    font-size: 28px;
+    font-size: calc(#{$standard-size-font} + 10px);
   }
 }
 
 //Device = Tablets, Ipads (landscape)
 @media (min-width: 768px) and (max-width: 1024px) {
   .heading {
-    font-size: 52px;
+    font-size: calc(#{$heading-size-home} - 10px);
   }
   .homepage-banner ul {
     margin-top: 50px;
   }
   .arkham-bullet {
     font-family: $arkham-font;
-    font-size: 36px;
+    font-size: calc(#{$standard-size-font} + 20px);
   }
 }
 

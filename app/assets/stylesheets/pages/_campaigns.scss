@@ -1,0 +1,40 @@
+.campaigns-container {
+  padding: 40px 40px;
+}
+
+.campaigns-headline {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+//Device = Most of the Smartphones Mobiles (Portrait)
+@media (min-width: 320px) and (max-width: 480px) {
+  .campaigns-container {
+    padding: 20px 20px;
+  }
+  .campaigns-headline {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+//Device = Low Resolution Tablets, Mobiles (Landscape)
+@media (min-width: 481px) and (max-width: 767px) {
+  .campaigns-container {
+    padding: 20px 20px;
+  }
+  .campaigns-headline {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+

@@ -1,3 +1,18 @@
-<% @campaigns.each do |campaign| %>
-  <p><%= "#{campaign.name}: #{campaign.id}" %></p>
-<% end %>
+<div class="campaigns-container">
+  <div class="campaigns-headline">
+    <h1 class="arkham-font-tale">Your Campaigns</h1>
+    <a class="button-tale" href="#">Hide completed</a>
+  </div>
+  <div class="cards">
+    <% @campaigns.each do |campaign| %>
+    <div class="card-category">
+      <%= link_to campaign_path(campaign), class:"no-link-style-black" do %>
+      <h2 style="text-align: center;" class="arkham-font-tale"><%= campaign.name %></h2>
+      <h5>Players</h5>
+      <p><%= "#{campaign.user.username.capitalize}: " %></p> <!-- add investigator name -->
+      <h5>Next Scenario</h5>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+</div>

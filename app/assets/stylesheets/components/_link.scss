@@ -1,0 +1,17 @@
+.no-link-style-white {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    color: $white;
+  }
+}
+
+.no-link-style-black{
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    color: inherit;
+  }
+}

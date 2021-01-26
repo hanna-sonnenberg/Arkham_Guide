@@ -7,6 +7,15 @@ $arkham-font: "IM Fell English SC", "serif";
 $body-font: "Work Sans", "Helvetica", "sans-serif";
 $headers-font: "Nunito", "Helvetica", "sans-serif";
 
+// font sizes
+$heading-size-home: 62px;
+$standard-size-font: 18px;
+
+// font styling
+.arkham-font-tale {
+  font-family: $arkham-font;
+  color: #2B383F;
+}
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {

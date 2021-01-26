@@ -5,14 +5,19 @@
   </div>
   <div class="cards">
     <% @campaigns.each do |campaign| %>
-    <div class="card-category">
-      <%= link_to campaign_path(campaign), class:"no-link-style-black" do %>
-      <h2 style="text-align: center;" class="arkham-font-tale"><%= campaign.name %></h2>
-      <h5>Players</h5>
-      <p><%= "#{campaign.user.username.capitalize}: " %></p> <!-- add investigator name -->
-      <h5>Next Scenario</h5>
-      <% end %>
-    </div>
+      <div class="card-category">
+        <%= link_to campaign_path(campaign), class:"no-link-style-black" do %>
+        <h2 style="text-align: center;" class="arkham-font-tale"><%= campaign.name %></h2>
+        <h5>Players</h5>
+        <% campaign.investigators.each do |investigator| %>
+          <p><%= "#{investigator.player_name}: #{investigator.name}"%></p>
+        <% end %>
+        <h5>Current Scenario</h5>
+        <!-- add name of current scenario -->
+        <% end %>
+        <h5>Next Scenario</h5>
+        <!-- add name of next scenario -->
+      </div>
     <% end %>
   </div>
 </div>

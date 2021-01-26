@@ -60,6 +60,7 @@ SCENARIO_NAME = {
     "Into the Maelstrom"
   ]
 }
+PLAYER_NAME = ["Hanna", "Jakob", "Niko", "Nancy"]
 
 
 puts "creating campaigns"
@@ -93,6 +94,7 @@ Campaign.all.each do |campaign|
   INVESTIGATOR_NAME.each do |investigator|
     Investigator.create!(
       name: investigator,
+      player_name: PLAYER_NAME.sample,
       deck_link: DECK_LINK.sample,
       physical_trauma: 0,
       mental_trauma: 0,

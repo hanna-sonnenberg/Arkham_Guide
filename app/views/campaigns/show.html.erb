@@ -1,1 +1,38 @@
-<h1><%= @campaign.name %></h1>
+<div class="standard-container">
+  <div class="headline-container">
+    <h1 class="arkham-font-tale"><%= @campaign.name %></h1>
+    <%= link_to "Go back to your campaigns", campaigns_path, class:"no-link-style-black" %>
+  </div>
+  <div class="investigator-container">
+    <div class="flex-row-container">
+      <!-- cards for investigators -->
+      <div class="cards-investigator">
+         <% @campaign.investigators.each do |investigator| %>
+         <div class="card-category">
+           <h4 style="text-align: center;" class="arkham-font-tale"><%= investigator.name %></h4>
+           <p>Player: <%= investigator.player_name %></p>
+           <p>Investigator: <%= investigator.name %></p>
+           <p>Deck Link: <%= investigator.deck_link %></p>
+           <br>
+           <p>Physical Trauma: <%= investigator.physical_trauma %></p>
+           <p>Mental Trauma: <%= investigator.mental_trauma %></p>
+           <br>
+           <p>Unspent Experience Points: <%= investigator.unspent_experience_points %></p>
+         </div>
+         <% end %>
+      </div>
+      <!-- token box -->
+      <div class="token-box">
+        <p>TOKEN</p>
+      </div>
+    </div>
+    <div class="flex-row-container">
+      <!-- campaign log -->
+      <div>
+        <h3 class="arkham-font-tale">Campaign Log</h3>
+      </div>
+      <div>
+        <h3 class="arkham-font-tale">Scenarios</h3>
+      </div>
+  </div>
+</div>

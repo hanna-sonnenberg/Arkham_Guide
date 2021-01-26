@@ -6,7 +6,7 @@
   <div class="cards">
     <% @campaigns.each do |campaign| %>
     <div class="card-category">
-      <%= link_to campaign_path(campaign), class:"no-link-style" do %>
+      <%= link_to campaign_path(campaign), class:"no-link-style-black" do %>
       <h2 style="text-align: center;" class="arkham-font-tale"><%= campaign.name %></h2>
       <h5>Players</h5>
       <p><%= "#{campaign.user.username.capitalize}: " %></p> <!-- add investigator name -->

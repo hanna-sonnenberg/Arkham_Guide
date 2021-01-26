@@ -9,20 +9,6 @@
   align-items: center;
 }
 
-.arkham-font-tale {
-  font-family: $arkham-font;
-  color: $dark-tale;
-}
-
-.no-link-style {
-  text-decoration: none;
-  color: $black;
-
-  &:hover {
-    color: black;
-  }
-}
-
 //Device = Most of the Smartphones Mobiles (Portrait)
 @media (min-width: 320px) and (max-width: 480px) {
   .campaigns-container {

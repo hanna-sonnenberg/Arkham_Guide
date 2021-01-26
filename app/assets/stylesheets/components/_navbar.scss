@@ -1,8 +1,15 @@
+.navbar {
+  height: $navbar-height;
+}
+
 .navbar-lewagon {
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  background: $dark-gray;
-  font-family: $logo-font;
-  padding: 8px 20px;
+  align-items: center;
+  background: $dark-tale;
+  font-family: $arkham-font;
+  padding: 5px 25px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -10,9 +17,67 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 60px;
+  width: 200px;
 }
 
-.navbar-light .navbar-nav .nav-link {
-    color: $light-gray;
+.navbar-dark .navbar-nav .nav-link {
+    color: $white;
 }
+
+.dropdown-item {
+  font-size: 18px;
+}
+
+.responsive {
+  display: none;
+}
+
+//Device = Most of the Smartphones Mobiles (Portrait)
+@media (min-width: 320px) and (max-width: 480px) {
+  .navbar-lewagon .navbar-brand img {
+    width: 120px;
+  }
+  .avatar {
+    display: none;
+  }
+  .navbar-toggler {
+    padding: 2px 6px;
+  }
+  .navbar-nav {
+    background-color: $white;
+    padding: 5px 0 5px 10px;
+    margin-top: 3px;
+  }
+  .navbar-dark .navbar-nav .nav-link {
+    color: $black;
+  }
+  .responsive {
+    display: inline;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 574px) {
+  .navbar-lewagon .navbar-brand img {
+    width: 120px;
+  }
+  .avatar {
+    display: none;
+  }
+  .navbar-toggler {
+    padding: 2px 6px;
+  }
+  .navbar-nav {
+    background-color: $white;
+    padding: 5px 0 5px 10px;
+    margin-top: 3px;
+  }
+  .navbar-dark .navbar-nav .nav-link {
+    color: $black;
+  }
+  .responsive {
+    display: inline;
+  }
+}
+
+
+

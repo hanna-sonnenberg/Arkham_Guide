@@ -1,18 +1,24 @@
-<div class="campaigns-container">
-  <div class="campaigns-headline">
+<div class="standard-container">
+  <div class="headline-container">
     <h1 class="arkham-font-tale">Your Campaigns</h1>
     <a class="button-tale" href="#">Hide completed</a>
   </div>
   <div class="cards">
     <% @campaigns.each do |campaign| %>
-    <div class="card-category">
-      <%= link_to campaign_path(campaign), class:"no-link-style-black" do %>
-      <h2 style="text-align: center;" class="arkham-font-tale"><%= campaign.name %></h2>
-      <h5>Players</h5>
-      <p><%= "#{campaign.user.username.capitalize}: " %></p> <!-- add investigator name -->
-      <h5>Next Scenario</h5>
-      <% end %>
-    </div>
+      <div class="card-category">
+        <%= link_to campaign_path(campaign), class:"no-link-style-black" do %>
+        <h2 style="text-align: center;" class="arkham-font-tale"><%= campaign.name %></h2>
+        <p class="bold-font">Players</p>
+        <% campaign.investigators.each do |investigator| %>
+          <p><%= "#{investigator.player_name}: #{investigator.name}
+          (#{investigator.unspent_experience_points} XP)"%></p>
+        <% end %>
+        <p class="bold-font">Current Scenario</p>
+        <!-- add name of current scenario -->
+        <p class="bold-font">Next Scenario</p>
+        <!-- add name of next scenario -->
+        <% end %>
+      </div>
     <% end %>
   </div>
 </div>

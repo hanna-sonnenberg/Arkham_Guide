@@ -16,9 +16,20 @@
   padding: 15px;
 }
 
+.cards-investigator {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 50px;
+
+  padding: 25px 0px;
+}
+
 //Device = Most of the Smartphones Mobiles (Portrait)
 @media (min-width: 320px) and (max-width: 480px) {
   .cards {
+    grid-template-columns: 1fr;
+  }
+  .cards-investigator {
     grid-template-columns: 1fr;
   }
   .card-category {
@@ -29,6 +40,9 @@
 //Device = Low Resolution Tablets, Mobiles (Landscape)
 @media (min-width: 481px) and (max-width: 767px) {
   .cards {
+    grid-template-columns: 1fr;
+  }
+  .cards-investigator {
     grid-template-columns: 1fr;
   }
   .card-category {

@@ -30,7 +30,10 @@
   .navbar-container .navbar-brand img {
     width: 150px;
   }
-  .avatar, .non-responsive-link {
+  .avatar {
+    display: none;
+  }
+  .non-responsive {
     display: none;
   }
   .navbar-collapse {
@@ -55,8 +58,14 @@
   .navbar-container .navbar-brand img {
     width: 150px;
   }
-  .avatar, .non-responsive-link {
+  .avatar {
     display: none;
+  }
+  .non-responsive {
+    display: none;
+  }
+  .navbar-collapse {
+    background-color: $white;
   }
   .navbar-toggler {
     padding: 2px 6px;

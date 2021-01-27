@@ -1,1 +1,7 @@
-<h1>create a new campaign</h1>
+<div class="standard-container">
+  <div class="form-container">
+    <%= simple_form_for @campaign do |f| %>
+    <%= f.input :name, label: "Choose the Campaign" %>
+   <% end %>
+  </div>
+</div>

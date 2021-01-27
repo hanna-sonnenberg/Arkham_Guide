@@ -8,6 +8,10 @@ class CampaignsController < ApplicationController
   def show
   end
 
+  def new
+    @campaign = Campaign.new
+  end
+
   private
 
   def set_campaign

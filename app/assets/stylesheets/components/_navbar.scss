@@ -2,30 +2,23 @@
   height: $navbar-height;
 }
 
-.navbar-lewagon {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  background: $dark-tale;
-  font-family: $arkham-font;
-  padding: 5px 25px;
+.navbar-dark .navbar-nav .nav-link {
+  color: $white;
+  font-size: 24px;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-container .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
+.navbar-container .navbar-brand img {
   width: 200px;
 }
 
-.navbar-dark .navbar-nav .nav-link {
-    color: $white;
-}
-
 .dropdown-item {
+  color: $black;
   font-size: $standard-size-font;
+  padding: 4px 4px;
 }
 
 .responsive {
@@ -34,50 +27,51 @@
 
 //Device = Most of the Smartphones Mobiles (Portrait)
 @media (min-width: 320px) and (max-width: 480px) {
-  .navbar-lewagon .navbar-brand img {
-    width: 120px;
+  .navbar-container .navbar-brand img {
+    width: 150px;
   }
-  .avatar {
+  .non-responsive {
     display: none;
+  }
+  .navbar-collapse {
+    background-color: $white;
   }
   .navbar-toggler {
     padding: 2px 6px;
-  }
-  .navbar-nav {
-    background-color: $white;
-    padding: 5px 0 5px 10px;
-    margin-top: 3px;
-  }
-  .navbar-dark .navbar-nav .nav-link {
-    color: $black;
+    margin-left: 20px;
   }
   .responsive {
     display: inline;
+  }
+  .link-icon {
+    color: $white;
+    &:hover {
+      color: $white;
+    }
   }
 }
 
 @media (min-width: 481px) and (max-width: 574px) {
-  .navbar-lewagon .navbar-brand img {
-    width: 120px;
+  .navbar-container .navbar-brand img {
+    width: 150px;
   }
-  .avatar {
+  .non-responsive {
     display: none;
+  }
+  .navbar-collapse {
+    background-color: $white;
   }
   .navbar-toggler {
     padding: 2px 6px;
-  }
-  .navbar-nav {
-    background-color: $white;
-    padding: 5px 0 5px 10px;
-    margin-top: 3px;
-  }
-  .navbar-dark .navbar-nav .nav-link {
-    color: $black;
+    margin-left: 20px;
   }
   .responsive {
     display: inline;
   }
+  .link-icon {
+    color: $white;
+    &:hover {
+      color: $white;
+    }
+  }
 }
-
-
-

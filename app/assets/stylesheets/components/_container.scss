@@ -1,3 +1,13 @@
+.navbar-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: $dark-tale;
+  font-family: $arkham-font;
+  padding: 5px 25px;
+}
+
 .standard-container {
   padding: 40px 40px;
 }
@@ -22,6 +32,9 @@
 
 //Device = Most of the Smartphones Mobiles (Portrait)
 @media (min-width: 320px) and (max-width: 480px) {
+  .nav-container {
+    padding: 5px 15px;
+  }
   .standard-container {
     padding: 20px 20px;
   }
@@ -40,6 +53,9 @@
 
 //Device = Low Resolution Tablets, Mobiles (Landscape)
 @media (min-width: 481px) and (max-width: 767px) {
+  .nav-container {
+    padding: 5px 15px;
+  }
   .standard-container {
     padding: 20px 20px;
   }

@@ -3,6 +3,7 @@
     <h1 class="arkham-font-tale"><%= @campaign.name %></h1>
     <%= link_to "Go back to your campaigns", campaigns_path, class:"no-link-style-black" %>
   </div>
+  <span class="button-frame"><%= @campaign.difficulty %></span>
   <div class="investigator-container">
     <div class="flex-row-container">
       <!-- cards for investigators -->

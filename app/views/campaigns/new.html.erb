@@ -1,7 +1,14 @@
 <div class="standard-container">
   <div class="form-container">
     <%= simple_form_for @campaign do |f| %>
-    <%= f.input :name, label: "Choose the Campaign" %>
+    <%= f.input :name, label: "Choose the Campaign", :collection => [
+      "The Night of Zealot", "The Dunwich Legacy", "The Path to Carcosa",
+      "The Forgotten Age", "The Circle Undone", "The Dream Eaters",
+      "The Innsmouth Conspiracy"
+    ] %>
+    <%= f.input :difficulty, label: "Choose Difficulty", :collection => %w(Easy Standard Hard Nightmare) %>
+    <!-- choose investigator -->
+    <%= f.submit "Create campaign", class: "button-tale" %>
    <% end %>
   </div>
 </div>

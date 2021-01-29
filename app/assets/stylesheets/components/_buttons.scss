@@ -1,5 +1,5 @@
 .button-tale {
-  color: white;
+  color: $white;
   padding: 8px 24px;
   border-radius: 4px;
   background: $dark-tale;
@@ -7,10 +7,17 @@
 
   &:hover {
     background: $darker-tale;
-    color: white;
+    color: $white;
   }
 }
 
 a:hover {
   text-decoration: none;
+}
+
+.button-frame {
+  color: $dark-tale;
+  padding: 8px 24px;
+  border-radius: 4px;
+  border: solid $dark-tale 1px;
 }

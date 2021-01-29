@@ -5,9 +5,7 @@ class Campaign < ApplicationRecord
   has_many :scenarios
 
   validates :name, presence: true, inclusion: { in: [
-    "The Night of Zealot", "The Dunwich Legacy", "The Path to Carcosa",
-    "The Forgotten Age", "The Circle Undone", "The Dream Eaters",
-    "The Innsmouth Conspiracy"
+    "core", "dwl", "ptc", "tfa", "tcu", "tde", "tic"
   ] }
   validates :difficulty, presence: true, inclusion: { in: %w(Easy Standard Hard Nightmare) }
 end

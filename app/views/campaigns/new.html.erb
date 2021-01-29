@@ -2,13 +2,16 @@
   <div class="form-container">
     <%= simple_form_for @campaign do |f| %>
     <%= f.input :name, label: "Choose the Campaign", :collection => [
-      "The Night of Zealot", "The Dunwich Legacy", "The Path to Carcosa",
-      "The Forgotten Age", "The Circle Undone", "The Dream Eaters",
-      "The Innsmouth Conspiracy"
-    ] %>
+      ["core", "The Night of Zealot"], ["dwl", "The Dunwich Legacy"],
+      ["ptc", "The Path to Carcosa"], ["tfa", "The Forgotten Age"],
+      ["tcu", "The Circle Undone"], ["tde", "The Dream Eaters"],
+      ["tic", "The Innsmouth Conspiracy"]
+    ], label_method: :second, value_method: :first %>
     <%= f.input :difficulty, label: "Choose Difficulty", :collection => %w(Easy Standard Hard Nightmare) %>
     <!-- choose investigator -->
     <%= f.submit "Create campaign", class: "button-tale" %>
    <% end %>
   </div>
 </div>
+
+

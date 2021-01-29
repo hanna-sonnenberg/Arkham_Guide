@@ -1,17 +1,22 @@
 <div class="standard-container">
   <div class="form-container">
     <%= simple_form_for @campaign do |f| %>
-    <%= f.input :name, label: "Choose the Campaign", :collection => [
-      ["core", "The Night of Zealot"], ["dwl", "The Dunwich Legacy"],
-      ["ptc", "The Path to Carcosa"], ["tfa", "The Forgotten Age"],
-      ["tcu", "The Circle Undone"], ["tde", "The Dream Eaters"],
-      ["tic", "The Innsmouth Conspiracy"]
-    ], label_method: :second, value_method: :first %>
-    <%= f.input :difficulty, label: "Choose Difficulty", :collection => %w(Easy Standard Hard Nightmare) %>
-    <!-- choose investigator -->
-    <%= f.submit "Create campaign", class: "button-tale" %>
+      <%= f.input :name, label: "Choose the Campaign", :collection => [
+        ["core", "The Night of Zealot"], ["dwl", "The Dunwich Legacy"],
+        ["ptc", "The Path to Carcosa"], ["tfa", "The Forgotten Age"],
+        ["tcu", "The Circle Undone"], ["tde", "The Dream Eaters"],
+        ["tic", "The Innsmouth Conspiracy"]
+      ], label_method: :second, value_method: :first %>
+      <%= f.input :difficulty, label: "Choose Difficulty", :collection => %w(Easy Standard Hard Nightmare) %>
+      <!-- choose investigator -->
+      <%= f.fields_for :investigators do |investigator| %>
+        <%= investigator.input :player_name, label: "Player Name" %>
+        <%= investigator.input :name, label: "Investigator", :collection => [
+          "Rex Murphy", "Agnes Baker", "Daisy Walker", "William Yorick"
+        ] %>
+        <%= investigator.input :deck_link, label: "Deck Link" %>
+      <% end %>
+      <%= f.submit "Create campaign", class: "button-tale" %>
    <% end %>
   </div>
 </div>
-
-

@@ -60,7 +60,7 @@ SCENARIO_NAME = {
     "Into the Maelstrom"
   ]
 }
-PLAYER_NAME = ["Hanna", "Jakob", "Niko", "Nancy"]
+PLAYER_NAME = ["Hanna", "Jakob", "Nico", "Nancy"]
 
 
 puts "creating campaigns"

@@ -1,6 +1,6 @@
 <div class="standard-container">
   <div class="headline-container">
-    <h1 class="arkham-font-tale"><%= @campaign.name %></h1>
+    <h1 class="arkham-font-tale"><%= @campaign_names[@campaign.name.to_sym] %></h1>
     <%= link_to "Go back to your campaigns", campaigns_path, class:"no-link-style-black" %>
   </div>
   <span class="button-frame"><%= @campaign.difficulty %></span>
@@ -35,6 +35,9 @@
       </div>
       <div>
         <h3 class="arkham-font-tale">Scenarios</h3>
+        <% @campaign.scenarios.each do |scenario| %>
+          <p><%= scenario.name %></p>
+        <% end %>
       </div>
     </div>
   </div>

@@ -10,6 +10,7 @@ class CampaignsController < ApplicationController
 
   def new
     @campaign = Campaign.new
+    @campaign.investigators.build
   end
 
   def create
@@ -29,6 +30,8 @@ class CampaignsController < ApplicationController
   end
 
   def campaign_params
-    params.require(:campaign).permit(:name, :difficulty, :campaign_log, :completed)
+    params.require(:campaign).permit(:name, :difficulty, :campaign_log, :completed, investigator_attributes: [
+      :name, :player_name, :deck_link, :physical_trauma, :mental_trauma, :unspent_experience_points
+    ])
   end
 end

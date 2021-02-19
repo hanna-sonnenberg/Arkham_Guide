@@ -44,7 +44,7 @@ class CampaignsController < ApplicationController
   before_action :set_campaign, only: [:show]
 
   def index
-    @campaigns = Campaign.all
+    @campaigns = Campaign.where(:user_id => current_user)
     @campaign_names = CAMPAIGN_NAMES
   end
 

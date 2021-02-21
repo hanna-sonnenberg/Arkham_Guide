@@ -13,9 +13,13 @@
       <div class="cards-investigator">
         <% @campaign.investigators.each do |investigator| %>
         <div class="card-category">
-          <h4 style="text-align: center;" class="arkham-font-tale">
-            <%= investigator.name %>
-          </h4>
+          <div class="flex-row-container">
+            <h4 class="arkham-font-tale"><%= investigator.name %></h4>
+            <div>
+              <i class="fas fa-pencil-alt link-icon"></i>
+              <i class="fas fa-trash link-icon"></i>
+            </div>
+          </div>
           <p>Player: <%= investigator.player_name %></p>
           <p>Deck Link: <%= investigator.deck_link %></p>
           <br>

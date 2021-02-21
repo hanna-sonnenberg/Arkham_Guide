@@ -3,6 +3,7 @@ class Campaign < ApplicationRecord
   has_many :investigators
   has_many :tokens
   has_many :scenarios
+  has_many :campaign_log_entries
 
   accepts_nested_attributes_for :investigators
 

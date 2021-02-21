@@ -88,7 +88,7 @@ class CampaignsController < ApplicationController
   end
 
   def campaign_params
-    params.require(:campaign).permit(:name, :difficulty, :campaign_log, :completed, investigators_attributes: [
+    params.require(:campaign).permit(:name, :difficulty, :completed, investigators_attributes: [
       :name, :player_name, :deck_link, :physical_trauma, :mental_trauma, :unspent_experience_points
     ])
   end

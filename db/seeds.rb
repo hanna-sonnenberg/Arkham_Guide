@@ -28,7 +28,6 @@ TOKEN = [
 ]
 INVESTIGATOR_NAME = ["Rex Murphy", "Agnes Baker", "Daisy Walker", "William Yorick"]
 DECK_LINK = ["https://arkhamdb.com/decklist/view/101/knowledge-overwhelming-solo-deck-1.0"]
-CAMPAIGN_LOG = [""]
 SCENARIO_NAME = {
   core: ["The Gathering", "The Midnight Masks", "The Devourer Below"],
   dwl: [
@@ -71,7 +70,6 @@ User.all.each do |user|
       name: campaign_name,
       difficulty: DIFFICULTY.sample,
       completed: false,
-      campaign_log: CAMPAIGN_LOG.sample,
       user: user
     )
   end

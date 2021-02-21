@@ -2,7 +2,7 @@
 .homepage-banner {
   background-size: cover;
   background-position: center;
-  // https://www.artstation.com/artwork/KvoKW
+  // https://www.artstation.com/artwork/KvoKW 
   height: calc(100vh - #{$navbar-height});
 
   display: flex;
@@ -31,6 +31,18 @@
   color: $white;
 }
 
+.image-source {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  p {
+    margin: 0;
+    font-size: 14px;
+    padding-right: 25px;
+  }
+}
+
 //Device = Most of the Smartphones Mobiles (Portrait)
 @media (min-width: 320px) and (max-width: 480px) {
   .heading {
@@ -44,6 +56,13 @@
   .arkham-bullet {
     font-family: $arkham-font;
     font-size: $standard-size-font;
+  }
+  .image-source {
+    right: auto;
+    p {
+      font-size: 10px;
+      padding-right: 0;
+    }
   }
 }
 
@@ -61,6 +80,13 @@
     font-family: $arkham-font;
     font-size: calc(#{$standard-size-font} + 10px);
   }
+  .image-source {
+    right: auto;
+    p {
+      font-size: 10px;
+      padding-right: 0;
+    }
+  }
 }
 
 //Device = Tablets, Ipads (landscape)
@@ -74,6 +100,12 @@
   .arkham-bullet {
     font-family: $arkham-font;
     font-size: calc(#{$standard-size-font} + 20px);
+  }
+  .image-source {
+    p {
+      font-size: 12px;
+      padding-right: 25px;
+    }
   }
 }
 

@@ -1,9 +1,12 @@
 <div class="standard-container">
   <div class="headline-container">
     <h1 class="arkham-font-tale"><%= @campaign_names[@campaign.name.to_sym] %></h1>
-    <%= link_to "Go back to your campaigns", campaigns_path, class:"no-link-style-black" %>
+    <%= link_to "Go back to your campaigns", campaigns_path, class:"no-link-style-black underlined-link" %>
   </div>
-  <span class="button-frame"><%= @campaign.difficulty %></span>
+  <div class="campaign-info-container">
+    <span class="button-frame"><%= @campaign.difficulty %></span>
+    <%= link_to "Create a new Investigator", new_campaign_investigator_path(@campaign), class:"new-investigator no-link-style-black underlined-link" %>
+  </div>
   <div class="investigator-container">
     <div class="flex-row-container">
       <!-- cards for investigators -->

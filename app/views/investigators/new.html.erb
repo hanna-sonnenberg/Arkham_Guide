@@ -1,0 +1,12 @@
+<div class="standard-container">
+  <div class="form-container">
+    <%= simple_form_for [@campaign, @investigator] do |f| %>
+     <%= f.input :player_name, label: "Player Name" %>
+        <%= f.input :name, label: "Investigator", :collection => [
+          "Rex Murphy", "Agnes Baker", "Daisy Walker", "William Yorick"
+        ] %>
+        <%= f.input :deck_link, label: "Deck Link" %>
+      <%= f.submit "Create Investigator", class: "button-tale" %>
+   <% end %>
+  </div>
+</div>

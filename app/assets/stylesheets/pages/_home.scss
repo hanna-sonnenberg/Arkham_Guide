@@ -35,11 +35,11 @@
   position: absolute;
   bottom: 0;
   right: 0;
+  padding: $navbar-padding;
 
   p {
     margin: 0;
     font-size: 14px;
-    padding-right: 25px;
   }
 }
 
@@ -58,10 +58,8 @@
     font-size: $standard-size-font;
   }
   .image-source {
-    right: auto;
     p {
       font-size: 10px;
-      padding-right: 0;
     }
   }
 }
@@ -81,10 +79,8 @@
     font-size: calc(#{$standard-size-font} + 10px);
   }
   .image-source {
-    right: auto;
     p {
       font-size: 10px;
-      padding-right: 0;
     }
   }
 }
@@ -104,7 +100,6 @@
   .image-source {
     p {
       font-size: 12px;
-      padding-right: 25px;
     }
   }
 }

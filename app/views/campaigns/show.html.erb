@@ -16,7 +16,9 @@
           <div class="flex-row-container">
             <h4 class="arkham-font-tale"><%= investigator.name %></h4>
             <div>
-              <i class="fas fa-pencil-alt link-icon"></i>
+              <%= link_to  edit_campaign_investigator_path(@campaign, investigator) do %>
+                <i class="fas fa-pencil-alt link-icon"></i>
+              <% end %>
               <i class="fas fa-trash link-icon"></i>
             </div>
           </div>

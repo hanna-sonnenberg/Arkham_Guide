@@ -1,0 +1,15 @@
+<div class="standard-container">
+    <div class="form-container">
+        <%= simple_form_for [@campaign, @investigator] do |f| %>
+            <%= f.input :player_name, label: "Player Name" %>
+            <%= f.input :name, label: "Investigator", :collection => [
+            "Rex Murphy", "Agnes Baker", "Daisy Walker", "William Yorick"
+            ] %>
+            <%= f.input :deck_link, label: "Deck Link" %>
+            <%= f.input :physical_trauma, label: "Physical Trauma" %>
+            <%= f.input :mental_trauma, label: "Mental Trauma" %>
+            <%= f.input :unspent_experience_points, label: "Unspent Experience Points" %>
+            <%= f.submit "Update Investigator", class: "button-tale" %>
+        <% end %>
+    </div>
+</div>

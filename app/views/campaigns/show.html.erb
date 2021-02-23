@@ -17,9 +17,13 @@
             <h4 class="arkham-font-tale"><%= investigator.name %></h4>
             <div>
               <%= link_to  edit_campaign_investigator_path(@campaign, investigator) do %>
-                <i class="fas fa-pencil-alt link-icon"></i>
+                  <i class="fas fa-pencil-alt link-icon"></i>
               <% end %>
-              <i class="fas fa-trash link-icon"></i>
+              <%= link_to  campaign_investigator_path(@campaign, investigator),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } do %>
+                  <i class="fas fa-trash link-icon"></i>
+              <% end %>
             </div>
           </div>
           <p>Player: <%= investigator.player_name %></p>

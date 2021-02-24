@@ -3,5 +3,4 @@ class Scenario < ApplicationRecord
 
   validates :name, presence: true
   validates :scenario_nr, presence: true
-  validates :completed, presence: true
 end

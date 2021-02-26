@@ -28,6 +28,11 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+}
+
+.investigator-info-container {
+  padding-top: 10px;
 }
 
 .campaign-info-container {

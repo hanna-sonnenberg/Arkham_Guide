@@ -7,7 +7,14 @@
     <% @campaigns.each do |campaign| %>
       <div class="card-category">
         <%= link_to campaign_path(campaign), class:"no-link-style-black" do %>
-        <h2 style="text-align: center;" class="arkham-font-tale"><%= @campaign_names[campaign.name.to_sym] %></h2>
+        <div class="flex-row-container">
+          <h2 style="text-align: center;" class="arkham-font-tale"><%= @campaign_names[campaign.name.to_sym] %></h2>
+          <%= link_to  campaign_path(campaign),
+              method: :delete,
+              data: { confirm: "Are you sure?" } do %>
+              <i class="fas fa-trash link-icon"></i>
+          <% end %>
+        </div>
         <p class="bold-font">Players</p>
         <% campaign.investigators.each do |investigator| %>
           <p><%= "#{investigator.player_name}: #{investigator.name}

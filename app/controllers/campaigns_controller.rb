@@ -41,7 +41,7 @@ CAMPAIGN_NAMES = {
 }
 
 class CampaignsController < ApplicationController
-  before_action :set_campaign, only: [:show]
+  before_action :set_campaign, only: [:show, :destroy]
 
   def index
     @campaigns = Campaign.where(:user_id => current_user)
@@ -80,6 +80,11 @@ class CampaignsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @campaign.destroy
+    redirect_to campaigns_path, notice: 'Campaign was successfully deleted.'
   end
 
   private

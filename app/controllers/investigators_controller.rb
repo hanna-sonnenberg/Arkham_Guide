@@ -1,6 +1,6 @@
 class InvestigatorsController < ApplicationController
-  before_action :set_campaign, only: [:index, :new, :edit, :update]
-  before_action :set_investigator, only: [:show, :edit, :update]
+  before_action :set_campaign, only: [:index, :new, :edit, :update, :destroy]
+  before_action :set_investigator, only: [:show, :edit, :update, :destroy]
 
   def index
     @investigators = Investigator.where(campaign: @campaign)
@@ -34,6 +34,11 @@ class InvestigatorsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @investigator.destroy
+    redirect_to @campaign, notice: 'Investigator was successfully deleted.'
   end
 
   private

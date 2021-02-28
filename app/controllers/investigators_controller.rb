@@ -1,6 +1,6 @@
 class InvestigatorsController < ApplicationController
-  before_action :set_campaign, only: [:index, :new]
-  before_action :set_investigator, only: [:show]
+  before_action :set_campaign, only: [:index, :new, :edit, :update]
+  before_action :set_investigator, only: [:show, :edit, :update]
 
   def index
     @investigators = Investigator.where(campaign: @campaign)
@@ -22,6 +22,17 @@ class InvestigatorsController < ApplicationController
       redirect_to campaign_path(@campaign)
     else
       render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @investigator.update(investigator_params)
+      redirect_to @campaign, notice: 'Investigator was successfully updated.'
+    else
+      render :edit
     end
   end
 

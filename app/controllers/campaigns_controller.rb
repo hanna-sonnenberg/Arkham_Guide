@@ -71,6 +71,7 @@ class CampaignsController < ApplicationController
       )
       if !@scenario.save
         render :new
+        return
       end
     end
 

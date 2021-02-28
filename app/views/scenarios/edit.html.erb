@@ -1,0 +1,8 @@
+<div class="standard-container">
+    <div class="form-container">
+        <%= simple_form_for [@campaign, @scenario] do |f| %>
+            <%= f.input :completed, label: "Completed?" %>
+            <%= f.submit "Update Scenario", class: "button-tale" %>
+        <% end %>
+    </div>
+</div>

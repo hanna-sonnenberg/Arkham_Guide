@@ -52,6 +52,9 @@
     justify-content: center;
     align-items: center;
   }
+  .campaign-info-container {
+    flex-wrap: wrap;
+  }
 }
 
 //Device = Low Resolution Tablets, Mobiles (Landscape)

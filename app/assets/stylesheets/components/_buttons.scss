@@ -21,3 +21,11 @@ a:hover {
   border-radius: 4px;
   border: solid $dark-tale 1px;
 }
+
+//Device = Most of the Smartphones Mobiles (Portrait)
+@media (min-width: 320px) and (max-width: 480px) {
+  .button-frame {
+    padding: 4px 12px;
+    margin: 30px 0 10px 0;
+  }
+}

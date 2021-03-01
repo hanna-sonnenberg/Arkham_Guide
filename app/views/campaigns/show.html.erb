@@ -4,8 +4,8 @@
     <%= link_to "Create a new Investigator", new_campaign_investigator_path(@campaign), class:"no-link-style-black underlined-link" %>
   </div>
   <div class="campaign-info-container">
-    <span class="button-frame"><%= @campaign.difficulty %></span>
-    <%= link_to "Go back to your campaigns", campaigns_path, class:"no-link-style-black underlined-link", style:"padding-left: 15px" %>
+    <span class="button-frame" style="margin-right: 15px"><%= @campaign.difficulty %></span>
+    <%= link_to "Go back to your campaigns", campaigns_path, class:"no-link-style-black underlined-link" %>
   </div>
   <div style="margin-top: 25px">
     <h3 class="arkham-font-tale media-font-size-medium">Investigators</h3>

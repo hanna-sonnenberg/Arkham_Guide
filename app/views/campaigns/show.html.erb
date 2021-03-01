@@ -8,13 +8,13 @@
     <%= link_to "Go back to your campaigns", campaigns_path, class:"no-link-style-black underlined-link", style:"padding-left: 15px" %>
   </div>
   <div style="margin-top: 25px">
-    <h3 class="arkham-font-tale media-font-size-heading">Investigators</h3>
+    <h3 class="arkham-font-tale media-font-size-medium">Investigators</h3>
   </div>
   <div class="cards">
     <% @campaign.investigators.each do |investigator| %>
     <div class="card-category">
       <div class="flex-row-container">
-        <h4 class="arkham-font-tale"><%= investigator.name %></h4>
+        <h4 class="arkham-font-tale media-font-size-small"><%= investigator.name %></h4>
         <div>
           <%= link_to  edit_campaign_investigator_path(@campaign, investigator) do %>
             <i class="fas fa-pencil-alt link-icon"></i>
@@ -38,11 +38,11 @@
 
   <!-- campaign log -->
   <div style="margin-top: 25px">
-    <h3 class="arkham-font-tale media-font-size-heading">Campaign Log</h3>
+    <h3 class="arkham-font-tale media-font-size-medium">Campaign Log</h3>
   </div>
 
   <!-- scenarios -->
-  <h3 class="arkham-font-tale media-font-size-heading" style="margin-top: 25px">Scenarios</h3>
+  <h3 class="arkham-font-tale media-font-size-medium" style="margin-top: 25px">Scenarios</h3>
   <% @campaign.scenarios.each do |scenario| %>
     <div class="scenarios-container">
       <% if scenario.completed == true %>

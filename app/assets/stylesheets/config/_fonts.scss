@@ -13,6 +13,7 @@ $arkham-font-size-XL: 40px;
 $arkham-font-size-L: 32px;
 $arkham-font-size-M: 28px;
 $arkham-font-size-S: 23px;
+$arkham-font-size-XS: 20px;
 $standard-size-font: 18px;
 
 // font styling
@@ -33,6 +34,9 @@ $standard-size-font: 18px;
   .media-font-size-medium {
     font-size: $arkham-font-size-S;
   }
+  .media-font-size-small {
+    font-size: $arkham-font-size-XS;
+  }
 }
 
 //Device = Low Resolution Tablets, Mobiles (Landscape)
@@ -48,9 +52,9 @@ $standard-size-font: 18px;
 //Device = Tablets, Ipads (landscape)
 @media (min-width: 768px) and (max-width: 1024px) {
   .media-font-size-heading {
-    font-size: $arkham-font-size-XL;
+    font-size: $arkham-font-size-L;
   }
   .media-font-size-medium {
-    font-size: $arkham-font-size-L;
+    font-size: $arkham-font-size-M;
   }
 }

@@ -19,11 +19,6 @@
   align-items: center;
 }
 
-.investigator-container {
-  display: flex;
-  flex-direction: column;
-}
-
 .flex-row-container {
   display: flex;
   flex-direction: row;
@@ -31,6 +26,12 @@
 }
 
 .campaign-info-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.scenarios-container {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -50,10 +51,6 @@
 
     justify-content: center;
     align-items: center;
-  }
-  .investigator-container {
-    display: flex;
-    flex-direction: column;
   }
 }
 

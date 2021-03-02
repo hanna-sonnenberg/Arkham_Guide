@@ -2,10 +2,8 @@
   <%= link_to root_path, class: "navbar-brand" do %>
     <%= image_tag "text_logo_white.svg" %>
   <% end %>
-
   <!-- move everything after this to the right -->
   <div style="display: flex; flex-direction: row; flex-grow: 1;"></div>
-
   <ul class="navbar-nav mr-auto">
     <% if user_signed_in? %>
       <li>
@@ -21,11 +19,9 @@
       <%= link_to "Login", new_user_session_path, class: "nav-link" %>
     <% end %>
   </ul>
-
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
   <!-- dropdown on avatar -->
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">

@@ -1,13 +1,13 @@
 <div class="standard-container">
-  <%= link_to "Go back",  campaign_path(@campaign), class:"no-link-style-black underlined-link"%> 
+  <%= link_to "Go back",  campaign_path(@campaign), class:"no-link-style-black underlined-link"%>
   <div class="form-container" style="margin-top: 25px">
     <%= simple_form_for [@campaign, @investigator] do |f| %>
-     <%= f.input :player_name, label: "Player Name" %>
-        <%= f.input :name, label: "Investigator", :collection => [
+      <%= f.input :player_name, label: "Player Name" %>
+      <%= f.input :name, label: "Investigator", :collection => [
           "Rex Murphy", "Agnes Baker", "Daisy Walker", "William Yorick"
         ] %>
-        <%= f.input :deck_link, label: "Deck Link" %>
+      <%= f.input :deck_link, label: "Deck Link" %>
       <%= f.submit "Create Investigator", class: "button-tale" %>
-   <% end %>
+    <% end %>
   </div>
 </div>

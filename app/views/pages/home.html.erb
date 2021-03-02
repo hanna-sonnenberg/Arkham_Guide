@@ -1,15 +1,15 @@
 <div class="homepage-banner" style="background-image: url(<%= image_path "background.png"%>);">
-    <h1 class="heading">ARKHAM HORROR GUIDE</h1>
-    <ul>
-      <% if user_signed_in? %>
+  <h1 class="heading">ARKHAM HORROR GUIDE</h1>
+  <ul>
+    <% if user_signed_in? %>
       <li><%= link_to "View your campaigns", campaigns_path, class: "arkham-bullet no-link-style-white" %></li>
-      <% else %>
+    <% else %>
       <li><%= link_to "Sign Up", new_user_registration_path, class: "arkham-bullet no-link-style-white" %></li>
-      <% end %>
-    </ul>
-    <div class="image-source">
-      <p>Image by Frej Agelii via 
-      <%= link_to "Artstation", "https://www.artstation.com/artwork/KvoKW", class:"no-link-style-black underlined-link"%> 
-      </p>
-    </div>
+    <% end %>
+  </ul>
+  <div class="image-source">
+    <p>Image by Frej Agelii via 
+      <%= link_to "Artstation", "https://www.artstation.com/artwork/KvoKW", class:"no-link-style-black underlined-link"%>
+    </p>
+  </div>
 </div>

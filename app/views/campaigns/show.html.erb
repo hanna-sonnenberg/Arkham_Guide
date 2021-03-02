@@ -1,5 +1,5 @@
 <div class="standard-container">
-  <%= link_to "Go back", campaigns_path, class:"no-link-style-black underlined-link"%>  
+  <%= link_to "Go back", campaigns_path, class:"no-link-style-black underlined-link"%>
   <div style="margin-top: 25px">
     <h1 class="arkham-font-tale media-font-size-heading"><%= @campaign_names[@campaign.name.to_sym] %></h1>
     <span class="button-frame"><%= @campaign.difficulty %></span>
@@ -13,35 +13,34 @@
   </div>
   <div class="cards">
     <% @campaign.investigators.each do |investigator| %>
-    <div class="card-category">
-      <div class="flex-row-container">
-        <h4 class="arkham-font-tale media-font-size-small"><%= investigator.name %></h4>
-        <div>
-          <%= link_to  edit_campaign_investigator_path(@campaign, investigator) do %>
-            <i class="fas fa-pencil-alt link-icon"></i>
-          <% end %>
-          <%= link_to  campaign_investigator_path(@campaign, investigator),
+      <div class="card-category">
+        <div class="flex-row-container">
+          <h4 class="arkham-font-tale media-font-size-small"><%= investigator.name %></h4>
+          <div>
+            <%= link_to  edit_campaign_investigator_path(@campaign, investigator) do %>
+              <i class="fas fa-pencil-alt link-icon"></i>
+            <% end %>
+            <%= link_to  campaign_investigator_path(@campaign, investigator),
             method: :delete,
             data: { confirm: "Are you sure?" } do %>
-            <i class="fas fa-trash link-icon"></i>
-          <% end %>
+              <i class="fas fa-trash link-icon"></i>
+            <% end %>
+          </div>
         </div>
-      </div><br>
-      <p>Player: <%= investigator.player_name %></p>
-      <p>Deck Link: <%= link_to "Go to your Deck", investigator.deck_link, :target => "_blank", style: "color: black", class: "underlined-link" %></p>  
-      <!-- <p>Deck Link: <%#= investigator.deck_link %></p> -->
-      <p>Physical Trauma: <%= investigator.physical_trauma %></p>
-      <p>Mental Trauma: <%= investigator.mental_trauma %></p>
-      <p>Unspent Experience Points: <%= investigator.unspent_experience_points %></p>
-    </div>
+        <br>
+        <p>Player: <%= investigator.player_name %></p>
+        <p>Deck Link: <%= link_to "Go to your Deck", investigator.deck_link, :target => "_blank", style: "color: black", class: "underlined-link" %></p>
+        <!-- <p>Deck Link: <%#= investigator.deck_link %></p> -->
+        <p>Physical Trauma: <%= investigator.physical_trauma %></p>
+        <p>Mental Trauma: <%= investigator.mental_trauma %></p>
+        <p>Unspent Experience Points: <%= investigator.unspent_experience_points %></p>
+      </div>
     <% end %>
   </div>
-
   <!-- campaign log -->
   <div style="margin-top: 25px">
     <h3 class="arkham-font-tale media-font-size-medium">Campaign Log</h3>
   </div>
-
   <!-- scenarios -->
   <h3 class="arkham-font-tale media-font-size-medium" style="margin-top: 25px">Scenarios</h3>
   <% @campaign.scenarios.each do |scenario| %>
@@ -56,5 +55,5 @@
         <i class="fas fa-pencil-alt link-icon"></i>
       <% end %>
     </div>
-  <% end %>      
+  <% end %>
 </div>

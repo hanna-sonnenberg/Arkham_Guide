@@ -7,23 +7,24 @@
     <% @campaigns.each do |campaign| %>
       <div class="card-category">
         <%= link_to campaign_path(campaign), class:"no-link-style-black" do %>
-        <div class="flex-row-container">
-          <h2 style="text-align: center;" class="arkham-font-tale media-font-size-small"><%= @campaign_names[campaign.name.to_sym] %></h2><br>
-          <%= link_to  campaign_path(campaign),
+          <div class="flex-row-container">
+            <h2 style="text-align: center;" class="arkham-font-tale media-font-size-small"><%= @campaign_names[campaign.name.to_sym] %></h2>
+            <br>
+            <%= link_to  campaign_path(campaign),
               method: :delete,
               data: { confirm: "Are you sure?" } do %>
               <i class="fas fa-trash link-icon"></i>
-          <% end %>
-        </div>
-        <p class="bold-font">Players</p>
-        <% campaign.investigators.each do |investigator| %>
-          <p><%= "#{investigator.player_name}: #{investigator.name}
+            <% end %>
+          </div>
+          <p class="bold-font">Players</p>
+          <% campaign.investigators.each do |investigator| %>
+            <p><%= "#{investigator.player_name}: #{investigator.name}
           (#{investigator.unspent_experience_points} XP)"%></p>
-        <% end %>
-        <p class="bold-font">Current Scenario</p>
-        <!-- add name of current scenario -->
-        <p class="bold-font">Next Scenario</p>
-        <!-- add name of next scenario -->
+          <% end %>
+          <p class="bold-font">Current Scenario</p>
+          <!-- add name of current scenario -->
+          <p class="bold-font">Next Scenario</p>
+          <!-- add name of next scenario -->
         <% end %>
       </div>
     <% end %>

@@ -1,5 +1,5 @@
 <div class="standard-container">
-  <%= link_to "Go back", campaigns_path, class:"no-link-style-black underlined-link"%>  
+  <%= link_to "Go back", campaigns_path, class:"no-link-style-black underlined-link"%>
   <div class="form-container" style="margin-top: 25px">
     <%= simple_form_for @campaign do |f| %>
       <%= f.input :name, label: "Choose the Campaign", :collection => [
@@ -18,6 +18,6 @@
         <%= investigator.input :deck_link, label: "Deck Link" %>
       <% end %>
       <%= f.submit "Create campaign", class: "button-tale" %>
-   <% end %>
+    <% end %>
   </div>
 </div>

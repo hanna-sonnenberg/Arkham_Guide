@@ -103,7 +103,6 @@ end
 
 puts "#{User.count} new user created"
 puts "#{Campaign.count} new campaign created"
-puts "#{Token.count} new token created"
 puts "#{Investigator.count} new investigator created"
 puts "#{Scenario.count} new scenario created"
 

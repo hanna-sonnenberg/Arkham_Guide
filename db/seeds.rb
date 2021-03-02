@@ -11,7 +11,6 @@ puts "----------------------------------"
 
 Scenario.destroy_all
 Investigator.destroy_all
-Token.destroy_all
 Campaign.destroy_all
 User.destroy_all
 
@@ -22,10 +21,6 @@ User.create!(email: "jkosch@test.com", username: "Jakob", password: "654321")
 
 CAMPAIGN_NAME = ["core", "dwl", "ptc", "tfa", "tcu", "tde", "tic"]
 DIFFICULTY = ["Easy", "Standard", "Hard", "Nightmare"]
-TOKEN = [
-  "+1", "0", "-1", "-2", "-3", "-4", "auto-fail", "cultist", "shield", "skull",
-  "elder-sign", "tentacle"
-]
 INVESTIGATOR_NAME = ["Rex Murphy", "Agnes Baker", "Daisy Walker", "William Yorick"]
 DECK_LINK = ["https://arkhamdb.com/decklist/view/101/knowledge-overwhelming-solo-deck-1.0"]
 SCENARIO_NAME = {
@@ -75,17 +70,6 @@ User.all.each do |user|
   end
 end
 
-puts "creating tokens"
-
-Campaign.all.each do |campaign|
-  TOKEN.each do |token|
-    Token.create!(
-      token_type: token,
-      campaign: campaign
-    )
-  end
-end
-
 puts "creating investigators"
 
 Campaign.all.each do |campaign|
@@ -119,7 +103,6 @@ end
 
 puts "#{User.count} new user created"
 puts "#{Campaign.count} new campaign created"
-puts "#{Token.count} new token created"
 puts "#{Investigator.count} new investigator created"
 puts "#{Scenario.count} new scenario created"
 

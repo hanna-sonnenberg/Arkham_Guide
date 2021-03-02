@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_20_165529) do
+ActiveRecord::Schema.define(version: 2021_03_01_114859) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,14 +56,6 @@ ActiveRecord::Schema.define(version: 2021_02_20_165529) do
     t.index ["campaign_id"], name: "index_scenarios_on_campaign_id"
   end
 
-  create_table "tokens", force: :cascade do |t|
-    t.string "token_type"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.bigint "campaign_id", null: false
-    t.index ["campaign_id"], name: "index_tokens_on_campaign_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -81,5 +73,4 @@ ActiveRecord::Schema.define(version: 2021_02_20_165529) do
   add_foreign_key "campaigns", "users"
   add_foreign_key "investigators", "campaigns"
   add_foreign_key "scenarios", "campaigns"
-  add_foreign_key "tokens", "campaigns"
 end

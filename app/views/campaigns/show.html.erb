@@ -1,67 +1,60 @@
 <div class="standard-container">
-  <div class="headline-container">
-    <h1 class="arkham-font-tale"><%= @campaign_names[@campaign.name.to_sym] %></h1>
-    <%= link_to "Go back to your campaigns", campaigns_path, class:"no-link-style-black underlined-link" %>
-  </div>
-  <div class="campaign-info-container">
+  <%= link_to "Go back", campaigns_path, class:"no-link-style-black underlined-link"%>  
+  <div style="margin-top: 25px">
+    <h1 class="arkham-font-tale media-font-size-heading"><%= @campaign_names[@campaign.name.to_sym] %></h1>
     <span class="button-frame"><%= @campaign.difficulty %></span>
-    <%= link_to "Create a new Investigator", new_campaign_investigator_path(@campaign), class:"new-investigator no-link-style-black underlined-link" %>
   </div>
-  <div class="investigator-container">
-    <div class="flex-row-container">
-      <!-- cards for investigators -->
-      <div class="cards-investigator">
-        <% @campaign.investigators.each do |investigator| %>
-        <div class="card-category">
-          <div class="flex-row-container">
-            <h4 class="arkham-font-tale"><%= investigator.name %></h4>
-            <div>
-              <%= link_to  edit_campaign_investigator_path(@campaign, investigator) do %>
-                  <i class="fas fa-pencil-alt link-icon"></i>
-              <% end %>
-              <%= link_to  campaign_investigator_path(@campaign, investigator),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } do %>
-                  <i class="fas fa-trash link-icon"></i>
-              <% end %>
-            </div>
-          </div>
-          <p>Player: <%= investigator.player_name %></p>
-          <p>Deck Link: <%= investigator.deck_link %></p>
-          <br>
-          <p>Physical Trauma: <%= investigator.physical_trauma %></p>
-          <p>Mental Trauma: <%= investigator.mental_trauma %></p>
-          <br>
-          <p>Unspent Experience Points: <%= investigator.unspent_experience_points %></p>
+  <div class="flex-row-container" style="margin-top: 25px">
+    <h3 class="arkham-font-tale media-font-size-medium">Investigators</h3>
+    <%= link_to "New Investigator", new_campaign_investigator_path(@campaign), class:"non-responsive no-link-style-black underlined-link" %>
+    <%= link_to new_campaign_investigator_path(@campaign), class: "responsive link-icon" do %>
+      <i class="fas fa-plus"></i>
+    <% end %>
+  </div>
+  <div class="cards">
+    <% @campaign.investigators.each do |investigator| %>
+    <div class="card-category">
+      <div class="flex-row-container">
+        <h4 class="arkham-font-tale media-font-size-small"><%= investigator.name %></h4>
+        <div>
+          <%= link_to  edit_campaign_investigator_path(@campaign, investigator) do %>
+            <i class="fas fa-pencil-alt link-icon"></i>
+          <% end %>
+          <%= link_to  campaign_investigator_path(@campaign, investigator),
+            method: :delete,
+            data: { confirm: "Are you sure?" } do %>
+            <i class="fas fa-trash link-icon"></i>
+          <% end %>
         </div>
-        <% end %>
-      </div>
-      <!-- token box -->
-      <div class="token-box">
-        <p>TOKEN</p>
-      </div>
+      </div><br>
+      <p>Player: <%= investigator.player_name %></p>
+      <p>Deck Link: <%= link_to "Go to your Deck", investigator.deck_link, :target => "_blank", style: "color: black", class: "underlined-link" %></p>  
+      <!-- <p>Deck Link: <%#= investigator.deck_link %></p> -->
+      <p>Physical Trauma: <%= investigator.physical_trauma %></p>
+      <p>Mental Trauma: <%= investigator.mental_trauma %></p>
+      <p>Unspent Experience Points: <%= investigator.unspent_experience_points %></p>
     </div>
-    <div class="flex-row-container">
-      <!-- campaign log -->
-      <div>
-        <h3 class="arkham-font-tale">Campaign Log</h3>
-      </div>
-      <div>
-        <h3 class="arkham-font-tale">Scenarios</h3>
-        <% @campaign.scenarios.each do |scenario| %>
-          <div class="flex-row-container" style="align-items:center">
-            <% if scenario.completed == true %>
-              <i class="far fa-check-square"></i>
-            <% else %>
-              <i class="far fa-square"></i>
-            <% end %>
-            <p class="scenario-name"><%= scenario.name %></p>
-            <%= link_to  edit_campaign_scenario_path(@campaign, scenario) do %>
-              <i class="fas fa-pencil-alt link-icon"></i>
-            <% end %>
-          </div>
-        <% end %>
-      </div>
-    </div>
+    <% end %>
   </div>
+
+  <!-- campaign log -->
+  <div style="margin-top: 25px">
+    <h3 class="arkham-font-tale media-font-size-medium">Campaign Log</h3>
+  </div>
+
+  <!-- scenarios -->
+  <h3 class="arkham-font-tale media-font-size-medium" style="margin-top: 25px">Scenarios</h3>
+  <% @campaign.scenarios.each do |scenario| %>
+    <div class="scenarios-container">
+      <% if scenario.completed == true %>
+        <i class="far fa-check-square"></i>
+      <% else %>
+        <i class="far fa-square"></i>
+      <% end %>
+      <p style="padding: 0 15px; margin-bottom: 0"><%= scenario.name %></p>
+      <%= link_to  edit_campaign_scenario_path(@campaign, scenario) do %>
+        <i class="fas fa-pencil-alt link-icon"></i>
+      <% end %>
+    </div>
+  <% end %>      
 </div>

@@ -12,25 +12,14 @@
   padding: 40px 40px;
 }
 
-.headline-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.investigator-container {
-  display: flex;
-  flex-direction: column;
-}
-
 .flex-row-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-.campaign-info-container {
+.scenarios-container {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -44,17 +33,6 @@
   .standard-container {
     padding: 20px 20px;
   }
-  .headline-container {
-    display: flex;
-    flex-direction: column;
-
-    justify-content: center;
-    align-items: center;
-  }
-  .investigator-container {
-    display: flex;
-    flex-direction: column;
-  }
 }
 
 //Device = Low Resolution Tablets, Mobiles (Landscape)
@@ -64,12 +42,5 @@
   }
   .standard-container {
     padding: 20px 20px;
-  }
-  .headline-container {
-    display: flex;
-    flex-direction: column;
-
-    justify-content: center;
-    align-items: center;
   }
 }

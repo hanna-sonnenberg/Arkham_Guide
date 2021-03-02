@@ -16,8 +16,12 @@
   }
 }
 
-.underlined-link:hover {
+.underlined-link {
   text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .link-icon {

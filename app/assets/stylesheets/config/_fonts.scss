@@ -8,7 +8,12 @@ $body-font: "Work Sans", "Helvetica", "sans-serif";
 $headers-font: "Nunito", "Helvetica", "sans-serif";
 
 // font sizes
-$heading-size-home: 62px;
+$arkham-font-size-XXL: 62px;
+$arkham-font-size-XL: 40px;
+$arkham-font-size-L: 32px;
+$arkham-font-size-M: 28px;
+$arkham-font-size-S: 23px;
+$arkham-font-size-XS: 20px;
 $standard-size-font: 18px;
 
 // font styling
@@ -21,12 +26,35 @@ $standard-size-font: 18px;
   font-weight: bold;
 }
 
-// To use a font file (.woff) uncomment following lines
-// @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
-// }
-// $my-font: "Font Name";
+//Device = Most of the Smartphones Mobiles (Portrait)
+@media (min-width: 320px) and (max-width: 480px) {
+  .media-font-size-heading {
+    font-size: $arkham-font-size-M;
+  }
+  .media-font-size-medium {
+    font-size: $arkham-font-size-S;
+  }
+  .media-font-size-small {
+    font-size: $arkham-font-size-XS;
+  }
+}
+
+//Device = Low Resolution Tablets, Mobiles (Landscape)
+@media (min-width: 481px) and (max-width: 767px) {
+  .media-font-size-heading {
+    font-size: $arkham-font-size-L;
+  }
+  .media-font-size-medium {
+    font-size: $arkham-font-size-M;
+  }
+}
+
+//Device = Tablets, Ipads (landscape)
+@media (min-width: 768px) and (max-width: 1024px) {
+  .media-font-size-heading {
+    font-size: $arkham-font-size-L;
+  }
+  .media-font-size-medium {
+    font-size: $arkham-font-size-M;
+  }
+}

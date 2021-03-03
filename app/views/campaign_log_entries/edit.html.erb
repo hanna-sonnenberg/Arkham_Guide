@@ -1,0 +1,9 @@
+<div class="standard-container">
+  <%= link_to "Go back",  campaign_path(@campaign), class:"no-link-style-black underlined-link"%>
+  <div class="form-container" style="margin-top: 25px">
+    <%= simple_form_for [@campaign, @campaign_log_entry] do |f| %>
+      <%= f.input :content, label: "Entry" %>
+      <%= f.submit "Update campaign log entry", class: "button-tale" %>
+    <% end %>
+  </div>
+</div>

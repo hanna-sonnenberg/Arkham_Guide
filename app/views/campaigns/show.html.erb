@@ -12,7 +12,7 @@
     <% end %>
   </div>
   <div class="cards">
-    <% @campaign.investigators.each do |investigator| %>
+    <% @campaign.investigators.order(:created_at).each do |investigator| %>
       <div class="card-category">
         <div class="flex-row-container">
           <h4 class="arkham-font-tale media-font-size-small"><%= investigator.name %></h4>
@@ -40,10 +40,25 @@
   <!-- campaign log -->
   <div style="margin-top: 25px">
     <h3 class="arkham-font-tale media-font-size-medium">Campaign Log</h3>
+    <%= link_to "New Entry", new_campaign_campaign_log_entry_path(@campaign), class:"no-link-style-black underlined-link" %>
+    <% @campaign.campaign_log_entries.order(:created_at).each do |campaign_log_entry| %>
+      <%# TODO %>
+      <div class="scenarios-container"> 
+        <p><%= campaign_log_entry.content %></p>
+        <%= link_to  edit_campaign_campaign_log_entry_path(@campaign, campaign_log_entry) do %>
+          <i class="fas fa-pencil-alt link-icon"></i>
+        <% end %>
+        <%= link_to  campaign_campaign_log_entry_path(@campaign, campaign_log_entry),
+            method: :delete,
+            data: { confirm: "Are you sure?" } do %>
+              <i class="fas fa-trash link-icon"></i>
+        <% end %>
+      </div>
+    <% end %>
   </div>
   <!-- scenarios -->
   <h3 class="arkham-font-tale media-font-size-medium" style="margin-top: 25px">Scenarios</h3>
-  <% @campaign.scenarios.each do |scenario| %>
+  <% @campaign.scenarios.order(:scenario_nr).each do |scenario| %>
     <div class="scenarios-container">
       <% if scenario.completed == true %>
         <i class="far fa-check-square"></i>

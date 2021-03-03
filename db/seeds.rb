@@ -11,6 +11,7 @@ puts "----------------------------------"
 
 Scenario.destroy_all
 Investigator.destroy_all
+CampaignLogEntry.destroy_all
 Campaign.destroy_all
 User.destroy_all
 
@@ -55,6 +56,7 @@ SCENARIO_NAME = {
   ]
 }
 PLAYER_NAME = ["Hanna", "Jakob", "Nico", "Nancy"]
+CAMPAIGN_LOG_ENTRY = ["Your house is still standing", "The Necronomicon got stolen", "Dr. Warren Rice was kidnapped"]
 
 
 puts "creating campaigns"
@@ -100,9 +102,23 @@ Campaign.all.each do |campaign|
   end
 end
 
+puts "creating campaign log entries"
+
+Campaign.all.each do |campaign|
+  CampaignLogEntry.create!(
+    content: CAMPAIGN_LOG_ENTRY.sample,
+    campaign: campaign
+  )
+  CampaignLogEntry.create!(
+    content: CAMPAIGN_LOG_ENTRY.sample,
+    campaign: campaign
+  )
+end
+
 
 puts "#{User.count} new user created"
 puts "#{Campaign.count} new campaign created"
+puts "#{CampaignLogEntry.count} new campaign log entries created"
 puts "#{Investigator.count} new investigator created"
 puts "#{Scenario.count} new scenario created"
 

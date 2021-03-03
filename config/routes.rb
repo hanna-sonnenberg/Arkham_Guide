@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :campaigns do
     resources :investigators # only [ :edit, :update ]
     resources :scenarios # only [ :edit, :update ]
+    resources :campaign_log_entries # only [ :edit, :update ]
   end
 end

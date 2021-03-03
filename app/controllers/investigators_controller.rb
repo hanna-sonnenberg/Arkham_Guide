@@ -1,5 +1,5 @@
 class InvestigatorsController < ApplicationController
-  before_action :set_campaign, only: [:index, :new, :edit, :update, :destroy]
+  before_action :set_campaign, only: [:index, :new, :create, :edit, :update, :destroy]
   before_action :set_investigator, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -15,8 +15,6 @@ class InvestigatorsController < ApplicationController
 
   def create
     @investigator = Investigator.new(investigator_params)
-    # we need `campaign_id` to associate investigator with corresponding campaign
-    @campaign = Campaign.find(params[:campaign_id])
     @investigator.campaign = @campaign
     if @investigator.save
       redirect_to campaign_path(@campaign)

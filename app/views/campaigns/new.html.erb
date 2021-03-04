@@ -1,6 +1,6 @@
 <div class="standard-container">
   <%= link_to "Go back", campaigns_path, class:"no-link-style-black underlined-link"%>
-  <div class="form-container" style="margin-top: 25px">
+  <div class="form-container">
     <%= simple_form_for @campaign do |f| %>
       <%= f.input :name, label: "Choose the Campaign", :collection => [
         ["core", "The Night of Zealot"], ["dwl", "The Dunwich Legacy"],

@@ -1,5 +1,5 @@
 <div class="standard-container">
-  <h2>Log in</h2>
+  <h2 class="arkham-font-tale media-font-size-medium">Log in</h2>
 
   <div class="form-container">
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -19,6 +19,7 @@
       </div>
     <% end %>
   </div>
-
-  <%= render "devise/shared/links" %>
+  <div style="margin-top: 25px">
+    <%= render "devise/shared/links"%>
+  </div>
 </div>

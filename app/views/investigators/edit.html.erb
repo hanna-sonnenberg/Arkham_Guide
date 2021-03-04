@@ -1,6 +1,6 @@
 <div class="standard-container">
   <%= link_to "Go back",  campaign_path(@campaign), class:"no-link-style-black underlined-link"%>
-  <div class="form-container">
+  <div class="margin-top">
     <%= simple_form_for [@campaign, @investigator] do |f| %>
       <%= f.input :player_name, label: "Player Name" %>
       <%= f.input :name, label: "Investigator", :collection => [

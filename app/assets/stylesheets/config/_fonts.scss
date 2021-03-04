@@ -23,14 +23,11 @@ $standard-size-font: 18px;
 }
 
 .bold-font {
-  font-weight: bold;
+  font-weight: bold; 
 }
 
 //Device = Most of the Smartphones Mobiles (Portrait)
 @media (min-width: 320px) and (max-width: 480px) {
-  .media-font-size-heading {
-    font-size: $arkham-font-size-M;
-  }
   .media-font-size-medium {
     font-size: $arkham-font-size-S;
   }
@@ -41,9 +38,6 @@ $standard-size-font: 18px;
 
 //Device = Low Resolution Tablets, Mobiles (Landscape)
 @media (min-width: 481px) and (max-width: 767px) {
-  .media-font-size-heading {
-    font-size: $arkham-font-size-L;
-  }
   .media-font-size-medium {
     font-size: $arkham-font-size-M;
   }
@@ -51,9 +45,6 @@ $standard-size-font: 18px;
 
 //Device = Tablets, Ipads (landscape)
 @media (min-width: 768px) and (max-width: 1024px) {
-  .media-font-size-heading {
-    font-size: $arkham-font-size-L;
-  }
   .media-font-size-medium {
     font-size: $arkham-font-size-M;
   }

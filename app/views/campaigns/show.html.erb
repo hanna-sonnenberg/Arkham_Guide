@@ -1,15 +1,12 @@
 <div class="standard-container">
   <%= link_to "Go back", campaigns_path, class:"no-link-style-black underlined-link"%>
   <div style="margin-top: 25px">
-    <h2 class="arkham-font-tale media-font-size-heading"><%= @campaign_names[@campaign.name.to_sym] %></h2>
+    <h3 class="arkham-font-tale"><%= @campaign_names[@campaign.name.to_sym] %></h3>
     <span class="button-frame"><%= @campaign.difficulty %></span>
   </div>
   <div class="flex-row-container" style="margin-top: 25px">
     <h3 class="arkham-font-tale media-font-size-medium">Investigators</h3>
-    <%= link_to "New Investigator", new_campaign_investigator_path(@campaign), class:"non-responsive no-link-style-black underlined-link" %>
-    <%= link_to new_campaign_investigator_path(@campaign), class: "responsive link-icon" do %>
-      <i class="fas fa-plus"></i>
-    <% end %>
+    <%= link_to "Add Investigator", new_campaign_investigator_path(@campaign), class:"no-link-style-black underlined-link" %>
   </div>
   <div class="cards">
     <% @campaign.investigators.order(:created_at).each do |investigator| %>

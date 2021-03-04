@@ -1,7 +1,7 @@
 <div class="standard-container">
   <%= link_to "Go back", campaigns_path, class:"no-link-style-black underlined-link"%>
   <div style="margin-top: 25px">
-    <h1 class="arkham-font-tale media-font-size-heading"><%= @campaign_names[@campaign.name.to_sym] %></h1>
+    <h2 class="arkham-font-tale media-font-size-heading"><%= @campaign_names[@campaign.name.to_sym] %></h2>
     <span class="button-frame"><%= @campaign.difficulty %></span>
   </div>
   <div class="flex-row-container" style="margin-top: 25px">

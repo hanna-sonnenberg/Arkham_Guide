@@ -1,6 +1,6 @@
 <div class="standard-container">
   <div class="flex-row-container-wrap" style="margin-bottom: 25px; align-items: center">
-    <h2 class="arkham-font-tale media-font-size-heading">Your Campaigns</h2>
+    <h3 class="arkham-font-tale media-font-size-heading">Your Campaigns</h3>
     <a class="button-tale" href="#">Hide completed</a>
   </div>
   <div class="cards">
@@ -8,8 +8,7 @@
       <div class="card-category">
         <%= link_to campaign_path(campaign), class:"no-link-style-black" do %>
           <div class="flex-row-container">
-            <h3 class="arkham-font-tale media-font-size-small"><%= @campaign_names[campaign.name.to_sym] %></h3>
-            <br>
+            <h4 class="arkham-font-tale media-font-size-small"><%= @campaign_names[campaign.name.to_sym] %></h4>
             <%= link_to  campaign_path(campaign),
               method: :delete,
               data: { confirm: "Are you sure?" } do %>

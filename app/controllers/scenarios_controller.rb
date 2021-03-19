@@ -2,13 +2,6 @@ class ScenariosController < ApplicationController
   before_action :set_campaign, only: [:index, :edit, :update]
   before_action :set_scenarios, only: [:show, :edit, :update] 
 
-  def index
-    @scenarios = Scenario.where(campaign: @campaign)
-  end
-
-  def show
-  end
-
   def edit
   end
 
@@ -28,6 +21,7 @@ class ScenariosController < ApplicationController
 
   def set_scenarios
     @scenario = Scenario.find(params[:id])
+    authorize @scenario
   end
 
   def scenario_params

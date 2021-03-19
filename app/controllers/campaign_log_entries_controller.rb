@@ -4,11 +4,13 @@ class CampaignLogEntriesController < ApplicationController
 
   def new
     @campaign_log_entry = CampaignLogEntry.new
+    authorize @campaign_log_entry
   end
 
   def create
     @campaign_log_entry = CampaignLogEntry.new(campaign_log_entry_params)
     @campaign_log_entry.campaign = @campaign
+    authorize @campaign_log_entry
     if @campaign_log_entry.save
       redirect_to campaign_path(@campaign)
     else
@@ -40,6 +42,7 @@ class CampaignLogEntriesController < ApplicationController
 
   def set_campaign_log_entry
     @campaign_log_entry = CampaignLogEntry.find(params[:id])
+    authorize @campaign_log_entry
   end
 
   def campaign_log_entry_params

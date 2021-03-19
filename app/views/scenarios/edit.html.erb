@@ -1,6 +1,6 @@
 <div class="standard-container">
   <%= link_to "Go back",  campaign_path(@campaign), class:"no-link-style-black underlined-link"%>
-  <div class="form-container" style="margin-top: 25px">
+  <div class="margin-top">
     <%= simple_form_for [@campaign, @scenario] do |f| %>
       <%= f.input :completed, label: "Completed?" %>
       <%= f.submit "Update Scenario", class: "button-tale" %>

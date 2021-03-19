@@ -1,10 +1,8 @@
 <div class="standard-container">
   <%= link_to "Go back", campaigns_path, class:"no-link-style-black underlined-link"%>
-  <div style="margin-top: 25px">
-    <h3 class="arkham-font-tale"><%= @campaign_names[@campaign.name.to_sym] %></h3>
-    <span class="button-frame"><%= @campaign.difficulty %></span>
-  </div>
-  <div class="flex-row-container" style="margin-top: 25px">
+  <h3 class="arkham-font-tale margin-top"><%= @campaign_names[@campaign.name.to_sym] %></h3>
+  <span class="button-frame"><%= @campaign.difficulty %></span>
+  <div class="flex-row-container margin-top">
     <h3 class="arkham-font-tale media-font-size-medium">Investigators</h3>
     <%= link_to "Add Investigator", new_campaign_investigator_path(@campaign), class:"no-link-style-black underlined-link" %>
   </div>
@@ -36,7 +34,7 @@
   </div>
   
   <!-- campaign log -->
-  <div class="flex-row-container" style="margin-top: 25px">
+  <div class="flex-row-container margin-top">
     <h3 class="arkham-font-tale media-font-size-medium">Campaign Log</h3>
     <%= link_to "Add Entry", new_campaign_campaign_log_entry_path(@campaign), class:"no-link-style-black underlined-link" %>
   </div>
@@ -57,7 +55,7 @@
   <% end %>
   
   <!-- scenarios -->
-  <h3 class="arkham-font-tale media-font-size-medium" style="margin-top: 25px">Scenarios</h3>
+  <h3 class="arkham-font-tale media-font-size-medium margin-top">Scenarios</h3>
   <% @campaign.scenarios.order(:scenario_nr).each do |scenario| %>
     <div class="flex-center-container">
       <% if scenario.completed == true %>

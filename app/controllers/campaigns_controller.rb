@@ -55,12 +55,13 @@ class CampaignsController < ApplicationController
   def new
     @campaign = Campaign.new
     @campaign.investigators.build
+    authorize @campaign
   end
 
   def create
     @campaign = Campaign.new(campaign_params)
     @campaign.user = current_user
-
+    authorize @campaign
     # add all necessary scenarios for campaign
     SCENARIO_NAME[@campaign.name.to_sym].each_with_index do |scenario, index|
       @scenario = Scenario.create(
@@ -91,6 +92,7 @@ class CampaignsController < ApplicationController
 
   def set_campaign
     @campaign = Campaign.find(params[:id])
+    authorize @campaign
   end
 
   def campaign_params

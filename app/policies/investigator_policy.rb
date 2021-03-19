@@ -13,6 +13,10 @@ class InvestigatorPolicy < ApplicationPolicy
     user == record.campaign.user
   end
 
+  def update?
+    user == record.campaign.user
+  end
+
   def destroy?
     user == record.campaign.user
   end

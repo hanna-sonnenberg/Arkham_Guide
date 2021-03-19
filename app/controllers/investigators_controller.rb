@@ -38,7 +38,6 @@ class InvestigatorsController < ApplicationController
 
   def set_campaign
     @campaign = Campaign.find(params[:campaign_id])
-    authorize @campaign
   end
 
   def set_investigator

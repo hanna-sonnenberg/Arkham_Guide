@@ -44,7 +44,7 @@ class CampaignsController < ApplicationController
   before_action :set_campaign, only: [:show, :destroy]
 
   def index
-    @campaigns = Campaign.where(:user_id => current_user).order(created_at: :desc)
+    @campaigns = policy_scope(Campaign).order(created_at: :desc)
     @campaign_names = CAMPAIGN_NAMES
   end
 

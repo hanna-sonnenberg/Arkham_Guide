@@ -1,7 +1,7 @@
 class CampaignPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      scope.where(user: user)
     end
   end
 
@@ -10,6 +10,10 @@ class CampaignPolicy < ApplicationPolicy
   end
 
   def show?
-    true
+    user == record.user
+  end
+
+  def destroy?
+    user == record.user
   end
 end

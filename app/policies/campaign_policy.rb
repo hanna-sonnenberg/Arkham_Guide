@@ -10,7 +10,8 @@ class CampaignPolicy < ApplicationPolicy
   end
 
   def show?
-    user == record.user
+    true
+    # user == record.user
   end
 
   def destroy?

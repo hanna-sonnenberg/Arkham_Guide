@@ -1,21 +1,16 @@
 class InvestigatorsController < ApplicationController
   before_action :set_campaign, only: [:index, :new, :create, :edit, :update, :destroy]
-  before_action :set_investigator, only: [:show, :edit, :update, :destroy]
-
-  def index
-    @investigators = Investigator.where(campaign: @campaign)
-  end
-
-  def show
-  end
+  before_action :set_investigator, only: [:edit, :update, :destroy]
 
   def new
     @investigator = Investigator.new
+    authorize @investigator
   end
 
   def create
     @investigator = Investigator.new(investigator_params)
     @investigator.campaign = @campaign
+    authorize @investigator
     if @investigator.save
       redirect_to campaign_path(@campaign)
     else
@@ -43,10 +38,12 @@ class InvestigatorsController < ApplicationController
 
   def set_campaign
     @campaign = Campaign.find(params[:campaign_id])
+    authorize @campaign
   end
 
   def set_investigator
     @investigator = Investigator.find(params[:id])
+    authorize @investigator
   end
 
   def investigator_params

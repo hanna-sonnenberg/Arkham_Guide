@@ -45,6 +45,15 @@ class CampaignsController < ApplicationController
 
   def index
     @campaigns = policy_scope(Campaign).order(created_at: :desc)
+
+    @hide_completed = params[:hide_completed] == "true"
+    if @hide_completed
+      @campaigns = @campaigns.select do |campaign|
+        uncompleted_scenarios = campaign.scenarios.reject(&:completed)
+        uncompleted_scenarios.any?
+      end
+    end
+
     @campaign_names = CAMPAIGN_NAMES
   end
 

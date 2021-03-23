@@ -1,7 +1,11 @@
 <div class="standard-container">
   <div class="flex-row-container-wrap margin-bottom" style="align-items: center">
     <h3 class="arkham-font-tale">Your Campaigns</h3>
-    <a class="button-tale" href="#">Hide completed</a>
+    <% if @hide_completed %>
+      <%= link_to "Show all", campaigns_path, class:"button-tale"%>
+    <% else %>
+      <%= link_to "Hide completed", campaigns_path(:hide_completed => "true"), class:"button-tale"%>
+    <% end %>
   </div>
   <div class="cards">
     <% @campaigns.each do |campaign| %>

@@ -1,5 +1,10 @@
 <div class="standard-container">
-  <%= link_to "Go back",  campaign_path(@campaign), class:"no-link-style-black underlined-link"%>
+  <%= link_to campaign_path(@campaign) do %>
+    <div class="back-link-container">
+      <i class="fas fa-arrow-circle-left"></i>
+      <p class="back-link-text">Back</p>
+    </div>
+  <% end %>
   <div class="margin-top">
     <%= simple_form_for [@campaign, @scenario] do |f| %>
       <%= f.input :completed, label: "Completed?" %>

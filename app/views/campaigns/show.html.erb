@@ -1,7 +1,14 @@
 <div class="standard-container">
-  <%= link_to "Go back", campaigns_path, class:"no-link-style-black underlined-link"%>
+  <%= link_to campaigns_path do %>
+    <div class="back-link-container">
+      <i class="fas fa-arrow-circle-left"></i>
+      <p class="back-link-text">Back</p>
+    </div>
+  <% end %>
   <h3 class="arkham-font-tale margin-top"><%= @campaign_names[@campaign.name.to_sym] %></h3>
-  <span class="button-frame"><%= @campaign.difficulty %></span>
+  <div class="margin-top">
+    <span class="button-frame"><%= @campaign.difficulty %></span>
+  </div>
   <div class="flex-row-container margin-top">
     <h3 class="arkham-font-tale media-font-size-medium">Investigators</h3>
     <%= link_to "Add Investigator", new_campaign_investigator_path(@campaign), class:"no-link-style-black underlined-link" %>

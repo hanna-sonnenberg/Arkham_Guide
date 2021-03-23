@@ -8,27 +8,29 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
+
+  padding: 40px 20px;
 }
 
 .heading {
-  font-family: $arkham-font;
-  font-size: $arkham-font-size-XXL;
-  color: $white;
+  font-size: $arkham-font-size-XL;
   text-align: center;
-  margin-top: 70px;
 }
 
-.homepage-banner ul {
-  list-style: none;
-
-  margin-top: 100px;
-  padding-left: 0;
+.subheading {
+  font-size: $arkham-font-size-L;
+  text-align: center;
 }
 
-.arkham-bullet {
-  font-family: $arkham-font;
-  font-size: 42px;
-  color: $white;
+.bullet-container {
+  font-size: $arkham-font-size-S;
+  background-color: rgba(43, 56, 63, 0.7);
+  padding: 10px 15px;
+
+  ul {
+    margin: 0;
+  }
 }
 
 .image-source {
@@ -45,16 +47,19 @@
 
 //Device = Most of the Smartphones Mobiles (Portrait)
 @media (min-width: 320px) and (max-width: 480px) {
+  .homepage-banner {
+    padding: 40px 10px;
+  }
   .heading {
-    font-size: $arkham-font-size-M;
-    margin-top: 90px;
+    font-size: $arkham-font-size-S;
   }
-  .homepage-banner ul {
-    margin-top: 70px;
+  .subheading {
+    font-size: $arkham-font-size-XS;
   }
-  .arkham-bullet {
-    font-family: $arkham-font;
+  .bullet-container {
+    margin-top: 10px;
     font-size: $standard-size-font;
+    padding: 5px;
   }
   .image-source {
     p {
@@ -63,42 +68,24 @@
   }
 }
 
-//Device = Low Resolution Tablets, Mobiles (Landscape)
-@media (min-width: 481px) and (max-width: 767px) {
+@media (min-width: 370px) and (max-width: 767px) {
+  .homepage-banner {
+    padding: 20px 10px;
+  }
   .heading {
-    font-size: $arkham-font-size-L;
-
-    margin-top: 100px;
-  }
-  .homepage-banner ul {
-    margin-top: 50px;
-  }
-  .arkham-bullet {
-    font-family: $arkham-font;
     font-size: $arkham-font-size-M;
   }
+  .subheading {
+    font-size: $arkham-font-size-S;
+  }
+  .bullet-container {
+    margin-top: 10px;
+    font-size: $arkham-font-size-XS;
+    padding: 5px;
+  }
   .image-source {
     p {
       font-size: 10px;
-    }
-  }
-}
-
-//Device = Tablets, Ipads (landscape)
-@media (min-width: 768px) and (max-width: 1024px) {
-  .heading {
-    font-size: $arkham-font-size-XL;
-  }
-  .homepage-banner ul {
-    margin-top: 50px;
-  }
-  .arkham-bullet {
-    font-family: $arkham-font;
-    font-size: calc(#{$standard-size-font} + 20px);
-  }
-  .image-source {
-    p {
-      font-size: 12px;
     }
   }
 }

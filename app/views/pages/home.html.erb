@@ -1,12 +1,20 @@
 <div class="homepage-banner" style="background-image: url(<%= image_path "background.png"%>);">
-  <h1 class="heading">ARKHAM HORROR GUIDE</h1>
-  <ul>
+  <h1 class="heading arkham-font-white">ARKHAM HORROR GUIDE</h1>
+  <h3 class="subheading arkham-font-white">keep track of your campaigns, players and investigators</h3>
+  <div class="bullet-container">
+    <ul class="bullet-list arkham-font-white">
+      <li>add new campaigns and investigators</li>
+      <li>view your campaigns and manage your game status</li>
+      <li>handle your campaign log, investigators, scenarios and hide completed campaigns</li>
+    </ul>
+  </div>
+  <div>
     <% if user_signed_in? %>
-      <li><%= link_to "View your campaigns", campaigns_path, class: "arkham-bullet no-link-style-white" %></li>
+      <%= link_to "My campaigns", campaigns_path, class: "button-homepage" %>
     <% else %>
-      <li><%= link_to "Sign Up", new_user_registration_path, class: "arkham-bullet no-link-style-white" %></li>
+      <%= link_to "Sign Up", new_user_registration_path, class: "button-homepage" %>
     <% end %>
-  </ul>
+  </div>
   <div class="image-source">
     <p>Image by Frej Agelii via 
       <%= link_to "Artstation", "https://www.artstation.com/artwork/KvoKW", class:"no-link-style-black underlined-link"%>

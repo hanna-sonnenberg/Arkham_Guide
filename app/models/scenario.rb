@@ -1,5 +1,5 @@
 class Scenario < ApplicationRecord
-  def self.scenario_name 
+  def self.names 
     {
       core: ["The Gathering", "The Midnight Masks", "The Devourer Below"],
       dwl: [

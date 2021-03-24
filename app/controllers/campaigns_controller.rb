@@ -27,7 +27,7 @@ class CampaignsController < ApplicationController
     @campaign.user = current_user
     authorize @campaign
     # add all necessary scenarios for campaign
-    Scenario.scenario_name[@campaign.name.to_sym].each_with_index do |scenario, index|
+    Scenario.names[@campaign.name.to_sym].each_with_index do |scenario, index|
       @scenario = Scenario.create(
         name: scenario,
         scenario_nr: index + 1,

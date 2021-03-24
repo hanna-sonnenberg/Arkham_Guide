@@ -7,7 +7,7 @@ class Campaign < ApplicationRecord
     ["core", "dwl", "ptc", "tfa", "tcu", "tde", "tic"]
   end
 
-  def self.campaign_names
+  def self.names
     {
       core: "The Night of Zealot",
       dwl: "The Dunwich Legacy",

@@ -1,5 +1,5 @@
 class Investigator < ApplicationRecord
-  def self.investigator_name 
+  def self.names 
     ["Roland Banks",
       "Daisy Walker",
       "\"Skids\" O'Toole",
@@ -48,7 +48,7 @@ class Investigator < ApplicationRecord
 
   belongs_to :campaign
 
-  validates :name, presence: true, inclusion: { in: Investigator.investigator_name }
+  validates :name, presence: true, inclusion: { in: Investigator.names }
   validates :player_name, presence: true
   validates :deck_link, presence: true, format: URI::regexp(%w[http https])
 

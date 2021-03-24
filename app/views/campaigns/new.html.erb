@@ -7,13 +7,9 @@
   <% end %>
   <div class="margin-top">
     <%= simple_form_for @campaign do |f| %>
-      <%= f.input :name, label: "Choose the Campaign", :collection => [
-        ["core", "The Night of Zealot"], ["dwl", "The Dunwich Legacy"],
-        ["ptc", "The Path to Carcosa"], ["tfa", "The Forgotten Age"],
-        ["tcu", "The Circle Undone"], ["tde", "The Dream Eaters"],
-        ["tic", "The Innsmouth Conspiracy"]
-      ], label_method: :second, value_method: :first %>
-      <%= f.input :difficulty, label: "Choose Difficulty", :collection => %w(Easy Standard Hard Nightmare) %>
+      <%= f.input :name, label: "Choose the Campaign", :collection => Campaign.campaign_names, 
+          label_method: :second, value_method: :first %>
+      <%= f.input :difficulty, label: "Choose Difficulty", :collection => Campaign.difficulties %>
       <!-- choose investigator -->
       <%= f.fields_for :investigators do |investigator| %>
         <%= investigator.input :player_name, label: "Player Name" %>

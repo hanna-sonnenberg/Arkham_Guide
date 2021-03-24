@@ -12,7 +12,7 @@
       <div class="card-category">
         <%= link_to campaign_path(campaign), class:"no-link-style-black" do %>
           <div class="flex-row-container">
-            <h4 class="arkham-font-tale media-font-size-small"><%= @campaign_names[campaign.name.to_sym] %></h4>
+            <h4 class="arkham-font-tale media-font-size-small"><%= Campaign.names[campaign.name.to_sym] %></h4>
             <%= link_to  campaign_path(campaign),
               method: :delete,
               data: { confirm: "Are you sure?" } do %>

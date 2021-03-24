@@ -50,7 +50,7 @@ class Investigator < ApplicationRecord
 
   validates :name, presence: true, inclusion: { in: Investigator.names }
   validates :player_name, presence: true
-  validates :deck_link, presence: true, format: URI::regexp(%w[http https])
+  validates :deck_link, format: URI::regexp(%w[http https]), allow_blank: true
 
   validates :mental_trauma, presence: true
   validates :physical_trauma, presence: true

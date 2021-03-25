@@ -29,8 +29,9 @@
         </div>
         <br>
         <p>Player: <%= investigator.player_name %></p>
-        <p>Deck Link: <%= link_to "Go to your Deck", investigator.deck_link, :target => "_blank", style: "color: black", class: "underlined-link" %></p>
-        <!-- <p>Deck Link: <%#= investigator.deck_link %></p> -->
+        <% unless investigator.deck_link.blank?   %>
+          <p>Deck Link: <%= link_to "Go to your Deck", investigator.deck_link, :target => "_blank", style: "color: black", class: "underlined-link" %></p>
+        <% end %>
         <p>Physical Trauma: <%= investigator.physical_trauma %></p>
         <p>Mental Trauma: <%= investigator.mental_trauma %></p>
         <p>Unspent Experience Points: <%= investigator.unspent_experience_points %></p>

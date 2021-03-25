@@ -18,6 +18,7 @@ Project is created with:
 * Rails version: 6.0.3.5
 * Devise for Authentification
 * Pundit for Authorization
+* AJAX in Rails
 
 	
 ## Setup

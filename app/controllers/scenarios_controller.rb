@@ -1,13 +1,16 @@
 class ScenariosController < ApplicationController
   before_action :set_campaign, only: [:index, :edit, :update]
-  before_action :set_scenarios, only: [:show, :edit, :update] 
+  before_action :set_scenarios, only: [:show, :edit, :update]
 
   def edit
   end
 
   def update
     if @scenario.update(scenario_params)
-      redirect_to @campaign, notice: 'Scenario was successfully updated.'
+      respond_to do |format|
+        format.html { redirect_to @campaign, notice: 'Scenario was successfully updated.' }
+        format.js  # <-- will render `app/views/posts/update.js.erb`
+      end
     else
       render :edit
     end

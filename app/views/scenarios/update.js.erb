@@ -1,0 +1,9 @@
+var html = '<%= j render(:partial => 'scenarios/scenario', locals: { scenario: @scenario }) %>'.trim();
+
+// convert 'html' string to JS Node element to use it in 'replaceWith'
+var template = document.createElement('template');
+template.innerHTML = html;
+var updatedScenario = template.content.firstChild;
+
+var scenario = document.querySelector(`#scenario-<%= @scenario.id %>`);
+scenario.replaceWith(updatedScenario);

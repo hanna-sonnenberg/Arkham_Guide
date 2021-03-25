@@ -1,9 +1,7 @@
 <div class="standard-container">
   <%= link_to campaign_path(@campaign) do %>
-    <div class="back-link-container">
-      <i class="fas fa-arrow-circle-left"></i>
-      <p class="back-link-text">Back</p>
-    </div>
+    <i class="fas fa-arrow-circle-left link-icon"></i>
+    <span class="back-link-text">Back</span>
   <% end %>
   <div class="margin-top">
     <%= simple_form_for [@campaign, @scenario] do |f| %>

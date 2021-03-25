@@ -1,9 +1,7 @@
 <div class="standard-container">
   <%= link_to campaigns_path do %>
-    <div class="back-link-container">
-      <i class="fas fa-arrow-circle-left"></i>
-      <p class="back-link-text">Back</p>
-    </div>
+    <i class="fas fa-arrow-circle-left link-icon"></i>
+    <span class="back-link-text">Back</span>
   <% end %>
   <h3 class="arkham-font-tale margin-top"><%= Campaign.names[@campaign.name.to_sym] %></h3>
   <div class="margin-top">

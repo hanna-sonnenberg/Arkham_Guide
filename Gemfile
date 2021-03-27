@@ -34,6 +34,9 @@ gem 'devise'
 # for Authorization
 gem 'pundit'
 
+# required by nested forms
+gem "cocoon"
+
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'

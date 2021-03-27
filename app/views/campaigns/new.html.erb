@@ -5,15 +5,16 @@
   <% end %>
   <div class="margin-top">
     <%= simple_form_for @campaign do |f| %>
-      <%= f.input :name, label: "Choose the Campaign", :collection => Campaign.names, 
+      <%= f.input :name, label: "Choose the Campaign", :collection => Campaign.names,
           label_method: :second, value_method: :first %>
       <%= f.input :difficulty, label: "Choose Difficulty", :collection => Campaign.difficulties %>
-      <!-- choose investigator -->
-      <%= f.fields_for :investigators do |investigator| %>
-        <%= investigator.input :player_name, label: "Player Name" %>
-        <%= investigator.input :name, label: "Investigator", :collection => Investigator.names %>
-        <%= investigator.input :deck_link, label: "Deck Link" %>
-      <% end %>
+      <div id="investigators">
+        <!-- choose investigator -->
+        <%= f.simple_fields_for :investigators do |investigator| %>
+          <%= render 'investigator_fields', f: investigator %>
+        <% end %>
+        <%= link_to_add_association 'add investigator', f, :investigators %>
+      </div>
       <%= f.submit "Create campaign", class: "button-tale" %>
     <% end %>
   </div>

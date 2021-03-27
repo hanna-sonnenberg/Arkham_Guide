@@ -15,6 +15,13 @@
   justify-content: space-between;
 }
 
+.flex-btw-center-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .flex-row-container-wrap {
   display: flex;
   flex-direction: row;
@@ -26,6 +33,11 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.flex-column-container {
+  display: flex;
+  flex-direction: column;
 }
 
 //Device = Most of the Smartphones Mobiles (Portrait)

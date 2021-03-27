@@ -1,0 +1,9 @@
+var html = '<%= j render(:partial => 'investigators/investigator', locals: { investigator: @investigator }) %>'.trim();
+
+// convert 'html' string to JS Node element to use it in 'replaceWith'
+var template = document.createElement('template');
+template.innerHTML = html;
+var updatedInvestigator = template.content.firstChild;
+
+var investigator = document.getElementById(`investigator-<%= @investigator.id %>`);
+investigator.replaceWith(updatedInvestigator);

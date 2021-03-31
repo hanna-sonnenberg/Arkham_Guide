@@ -1,0 +1,76 @@
+<div id="investigator-<%= investigator.id %>" class="card-category">
+  <div class="flex-row-container">
+    <h4 class="arkham-font-tale media-font-size-small"><%= investigator.name %></h4>
+    <div>
+      <%= link_to  edit_campaign_investigator_path(@campaign, investigator) do %>
+        <i class="fas fa-pencil-alt link-icon"></i>
+      <% end %>
+      <%= link_to  campaign_investigator_path(@campaign, investigator),
+            method: :delete,
+            data: { confirm: "Are you sure?" } do %>
+        <i class="fas fa-trash link-icon"></i>
+      <% end %>
+    </div>
+  </div>
+  <br>
+  <p>Player: <%= investigator.player_name %></p>
+  <% unless investigator.deck_link.blank?   %>
+    <p>Deck Link: <%= link_to "Go to your Deck", investigator.deck_link, :target => "_blank", style: "color: black", class: "underlined-link" %></p>
+  <% end %>
+  <div class="flex-btw-center-container">
+    <span>Physical Trauma:</span>
+    <div class="flex-center-container">
+      <%= investigator.physical_trauma %>
+      <div class="flex-column-container icon-padding-left">
+        <%= button_to  campaign_investigator_path(@campaign, investigator), method: :put,
+                        params: {:investigator => { :physical_trauma => investigator.physical_trauma + 1 } }, class:["button-no-styling", "link-icon"],
+                        remote: true do %>
+          <i class="fas fa-caret-up"></i>
+        <% end %>
+        <%= button_to  campaign_investigator_path(@campaign, investigator), method: :put,
+                    params: {:investigator => { :physical_trauma => investigator.physical_trauma - 1 } }, class:["button-no-styling", "link-icon"],
+                    remote: true do %>
+          <i class="fas fa-caret-down"></i>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="space-box"></div>
+  <div class="flex-btw-center-container">
+    <span>Mental Trauma:</span>
+    <div class="flex-center-container">
+      <%= investigator.mental_trauma %>
+      <div class="flex-column-container icon-padding-left">
+        <%= button_to  campaign_investigator_path(@campaign, investigator), method: :put,
+                params: {:investigator => { :mental_trauma => investigator.mental_trauma + 1 } }, class:["button-no-styling", "link-icon"],
+                remote: true do %>
+          <i class="fas fa-caret-up"></i>
+        <% end %>
+        <%= button_to  campaign_investigator_path(@campaign, investigator), method: :put,
+                params: {:investigator => { :mental_trauma => investigator.mental_trauma - 1 } }, class:["button-no-styling", "link-icon"],
+                remote: true do %>
+          <i class="fas fa-caret-down"></i>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="space-box"></div>
+  <div class="flex-btw-center-container">
+    <span>Unspent Experience Points:</span>
+    <div class="flex-center-container">
+      <%= investigator.unspent_experience_points %>
+      <div class="flex-column-container icon-padding-left">
+        <%= button_to  campaign_investigator_path(@campaign, investigator), method: :put,
+            params: {:investigator => { :unspent_experience_points => investigator.unspent_experience_points + 1 } }, class:["button-no-styling", "link-icon"],
+            remote: true do %>
+          <i class="fas fa-caret-up"></i>
+        <% end %>
+        <%= button_to  campaign_investigator_path(@campaign, investigator), method: :put,
+            params: {:investigator => { :unspent_experience_points => investigator.unspent_experience_points - 1 } }, class:["button-no-styling", "link-icon"],
+            remote: true do %>
+          <i class="fas fa-caret-down"></i>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -21,9 +21,13 @@ class InvestigatorsController < ApplicationController
   def edit
   end
 
+  
   def update
     if @investigator.update(investigator_params)
-      redirect_to @campaign, notice: 'Investigator was successfully updated.'
+      respond_to do |format|
+        format.html { redirect_to @campaign, notice: 'Investigator was successfully updated.' } 
+        format.js  # <-- will render `app/views/investigators/update.js.erb`
+      end
     else
       render :edit
     end
